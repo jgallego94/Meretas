@@ -1,0 +1,168 @@
+﻿/*Index Page*/
+#Logo{
+    background-color: green;
+    height: 7em;
+}
+#Nav{
+    background-color: white;
+    height: 98px;
+    color: white;
+    font-size: large;
+    padding-top: 20px;
+    
+}
+
+.a{
+    color:white;
+}
+
+#background{
+    background-image: url("https://media.giphy.com/media/r1CCFBgsTiFPy/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#MainContent{
+    background-image: ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50em;
+    text-align: center;
+}
+
+#CenterPane{
+    font-size: 20px;
+    text-align: center;
+}
+
+h1{
+    font-size: 60px;
+}
+h2{
+    font-size: 40px;
+}
+#Shout{
+    color: white;
+    text-align:center;
+}   
+
+
+#startButton {
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  background: #ff944d;
+  padding: 15px 40px 15px 40px;
+  text-decoration: none;
+}
+
+#startButton:hover {
+  background:#ff751a;
+  text-decoration: none;
+  color: white;
+}
+
+#footer{
+    background-color: black;
+    top:2vh;
+    height: 5vh;
+}
+
+/*Question Page*/
+#LeftTitle{
+    height: 80vh;
+    color: white;
+    background-color:black;
+}
+
+#RightQuestion{
+    top: 6vh;
+    height: 60vh;
+    color:black;
+    background-color: white;
+    border-radius: 25px;
+}
+
+#QuestionBackground{
+    background-image: url("https://static.pexels.com/photos/4097/city-cars-traffic-lights.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  
+
+}
+
+hr.style-eight {
+     padding: 0; 
+     border: none; 
+     border-top: medium double #ff944d;
+     color:  #ff944d;
+     text-align: center; 
+}
+
+hr.style-eight:after { 
+    content: "$"; 
+    display: inline-block; 
+    position: relative; 
+    top: -14px; 
+    font-size: 18px; 
+    padding: 0 10px; 
+    background: white; 
+}
+
+#nextButton {
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  background: #ff944d;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#nextButton:hover {
+  background:#ff751a;
+  text-decoration: none;
+  color: white;
+}
+
+#control{
+    top: 28vh;
+    height: 10vh;
+    left: 73vh;
+}
+#control2{
+    top: 26vh;
+    height: 10vh;
+    left: 73vh;
+}
+#control3{
+    top: 23vh;
+    height: 10vh;
+    left: 73vh;
+}
+#control4{
+    top: 17vh;
+    height: 10vh;
+    left: 73vh;
+}
+
+#QuestionForm{
+ 
+}
+
+/*Results Page*/
+
+#ResultPane{
+    top: 6vh;
+    height: 60vh;
+    color:black;
+    background-color: white;
+    border-radius: 25px;
+}

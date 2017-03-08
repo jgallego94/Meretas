@@ -58,9 +58,9 @@
                  <div class="col-sm-12" id="FormWrapper">
                      <h2>What type of card are you looking for?</h2>
 
-                 <form id="QuestionForm">
+                 <form id="QuestionForm" class="form-group">
                      <br />
-                     <input type="radio" name="q1" value="1" /> Personal<br />
+                     <label class="btn btn-default btn-circle btn-lg"><input type="radio" name="q1" value="1" hidden="hidden" /><span style=": 10px;"> Personal</span></label>
                      <br />
                      <input type="radio" name="q1" value="2" /> Business<br />
 

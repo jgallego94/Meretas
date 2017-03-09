@@ -58,13 +58,17 @@
                  <div class="col-sm-12" id="FormWrapper">
 
                  <form id="QuestionForm">
+                     <div class="radio">
                      <br />
-                     <input type="radio" name="q2" value="1" /> Full Time<br />
+                     <input id="FullTime" type="radio" name="q2" value="1" />
+                         <label for="FullTime">Full Time</label><br />
                      <br />
-                     <input type="radio" name="q2" value="2" /> Self Employed<br />
+                     <input id="SelfEmployed" type="radio" name="q2" value="2" />
+                         <label for="SelfEmployed">Self Employed</label><br />
                      <br />
-                     <input type="radio" name="q2" value="3" /> Student <br />
-
+                     <input id="Student" type="radio" name="q2" value="3" />
+                         <label for="Student">Student</label><br />
+                     </div>
                      <div class="col-sm-12" id="control2">
                          <a href="Question3.aspx" role="button" class="btn btn-lg" id="nextButton">Next</a>
                      </div>

@@ -58,11 +58,14 @@
                  <div class="col-sm-12" id="FormWrapper">
 
                  <form id="QuestionForm">
+                     <div class="radio">
                      <br />
-                     <input type="radio" name="q6" value="1" /> Yes<br />
+                     <input id="Yes" type="radio" name="q6" value="1" />
+                         <label for="Yes">Yes</label><br />
                      <br />
-                     <input type="radio" name="q6" value="2" /> No<br />
-                   
+                     <input id="No" type="radio" name="q6" value="2" />
+                         <label for="No">No</label>
+                  </div>
                 
                     
                 

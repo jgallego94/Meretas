@@ -58,16 +58,26 @@
                  <div class="col-sm-12" id="FormWrapper">
 
                  <form id="QuestionForm">
+                     <div class="radio">
+
+                     
                      <br />
-                     <input type="radio" name="q5" value="1" /> CIBC<br />
+                     <input id="CIBC" type="radio" name="q5" value="1" />
+                         <label for="CIBC">CIBC</label><br />
                      <br />
-                     <input type="radio" name="q5" value="2" /> TD<br />
+                     <input id="TD" type="radio" name="q5" value="2" />
+                         <label for="TD">TD</label><br />
                      <br />
-                     <input type="radio" name="q5" value="2" /> ScotiaBank<br />
+                     <input id="ScotiaBank" type="radio" name="q5" value="2" />
+                         <label for="ScotiaBank">ScotiaBank</label><br />
                      <br />
-                     <input type="radio" name="q5" value="2" /> RBC<br />
+                     <input id="RBC" type="radio" name="q5" value="2" />
+                         <label for="RBC">RBC</label><br />
                      <br />
-                     <input type="radio" name="q5" value="2" /> No bank<br />
+                     <input id="NoBank" type="radio" name="q5" value="2" />
+                         <label for="NoBank">No Bank</label>
+
+                         </div>
                     
                 
 

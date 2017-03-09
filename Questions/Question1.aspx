@@ -58,11 +58,15 @@
                  <div class="col-sm-12" id="FormWrapper">
                      <h2>What type of card are you looking for?</h2>
 
-                 <form id="QuestionForm" class="form-group">
+                 <form id="QuestionForm">
                      <br />
-                     <label class="btn btn-default btn-circle btn-lg"><input type="radio" name="q1" value="1" hidden="hidden" /><span style=": 10px;"> Personal</span></label>
-                     <br />
-                     <input type="radio" name="q1" value="2" /> Business<br />
+                   <div class="radio">
+                     <input type="radio" id="Personal" name="q1" value="1"  />
+                     <label for="Personal"> Personal</label>
+                     <br /><br /><br />
+                     <input id="Business" type="radio"  name="q1" value="2" />
+                     <label for="Business"> Business</label>
+                   </div>
 
                      <div class="col-sm-12" id="control">
                          <a href="Question2.aspx" role="button" class="btn btn-lg" id="nextButton">Next</a>

@@ -58,12 +58,17 @@
                  <div class="col-sm-12" id="FormWrapper">
 
                  <form id="QuestionForm">
+                     <div class="radio">
                      <br />
-                     <input type="radio" name="q3" value="1" /> Travel Rewards<br />
+                     <input id="TravelRewards" type="radio" name="q3" value="1" />
+                         <label for="TravelRewards">Travel Rewards</label><br />
                      <br />
-                     <input type="radio" name="q3" value="2" /> Auto/Gas<br />
+                     <input id="AutoGas" type="radio" name="q3" value="2" />
+                         <label for="AutoGas">Auto/Gas</label><br />
                      <br />
-                     <input type="radio" name="q3" value="3" /> Cash Back <br />
+                     <input id="CashBack" type="radio" name="q3" value="3" />
+                         <label for="CashBack">Cash Back</label>
+                     </div>
 
                      <div class="col-sm-12" id="control2">
                          <a href="Question4.aspx" role="button" class="btn btn-lg" id="nextButton">Next</a>

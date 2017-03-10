@@ -71,7 +71,7 @@
                 
 
                      <div class="col-sm-12" id="control3">
-                         <a href="../Results/CreditCardResults.aspx" role="button" class="btn btn-lg" id="nextButton">Next</a>
+                         <a href="../Results/CreditCardResults.aspx" role="button" class="btn btn-lg" id="nextButton">Get Results</a>
                      </div>
                      
                  </form>

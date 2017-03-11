@@ -31,7 +31,7 @@ public class MeretasCodeHandler
        bool Confirmation = false;
        Surveys SurveyManager = new Surveys();
 
-       Confirmation = SurveyManager.AddResponse(ResponseID, QuestionID, SurveyId, Description)
+        Confirmation = SurveyManager.AddResponse(ResponseID, QuestionID, SurveyID, Description);
        
        return Confirmation;
    }
@@ -41,7 +41,7 @@ public class MeretasCodeHandler
        bool Confirmation = false;
        Surveys SurveyManager = new Surveys();
 
-       Confirmation = SurveyManager.AddSurvey(SurveyId, Description)
+        Confirmation = SurveyManager.AddSurvey(SurveyID, Description);
 
        return Confirmation;
    }
@@ -51,7 +51,7 @@ public class MeretasCodeHandler
        bool Confirmation = false;
        Surveys SurveyManager = new Surveys();
 
-       Confirmation = SurveyManager.AddVisitorSurvey(SurveyID, VisitorID)
+        Confirmation = SurveyManager.AddVisitorSurvey(SurveyID, VisitorID);
 
        return Confirmation;
    }
@@ -61,7 +61,7 @@ public class MeretasCodeHandler
        bool Confirmation;
        Surveys SurveyManager = new Surveys();
 
-       Confirmation = SurveyManager.ProcessSurvey(VisitorID, SurveyID, QuestionID, ResponseID, DateSubmitted, TimeSubmitted, ResponseInstanceID)
+        Confirmation = SurveyManager.ProcessSurvey(VisitorID, SurveyID, QuestionID, ResponseID, DateSubmitted, TimeSubmitted, ResponseInstanceID);
 
        return Confirmation;
    }

@@ -9,5 +9,5 @@ using System.Web;
 public class Response
 {
     int QuestionID;
-    String Description;
+    string Description;
 }

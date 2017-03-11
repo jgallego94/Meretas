@@ -9,5 +9,5 @@ using System.Web;
 public class Visitor
 {
     int SessionID;
-    String Character;
+    string Character;
 }

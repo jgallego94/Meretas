@@ -8,11 +8,11 @@ using System.Web;
 /// </summary>
 public class CreditCard
 {
-    String CardName;
-    String CardDescription;
-    String EmploymentStatus;
-    String Features;
-    Boolean BalanceLength;
-    String BankProvider;
-    Boolean IsBankrupt;
+    string CardName;
+    string CardDescription;
+    string EmploymentStatus;
+    string Features;
+    bool BalanceLength;
+    string BankProvider;
+    bool IsBankrupt;
 }

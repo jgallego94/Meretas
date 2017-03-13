@@ -18,7 +18,7 @@ public class MeretasCodeHandler
        return Confirmation;
    }
 
-   public Survey GetSurvey()
+   public Survey GetSurvey(int SurveyID)
    {
        Surveys SurveyManager = new Surveys();
        //Assuming you need a surveyId to return a survey
@@ -41,7 +41,7 @@ public class MeretasCodeHandler
        bool Confirmation = false;
        Surveys SurveyManager = new Surveys();
 
-        Confirmation = SurveyManager.AddSurvey(SurveyID, Description);
+        Confirmation = SurveyManager.AddSurvery(SurveyID, Description);
 
        return Confirmation;
    }

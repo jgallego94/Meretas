@@ -70,7 +70,7 @@
                     
                 
 
-                     <div class="col-sm-12" id="control3">
+                     <div class="col-sm-12" id="control5">
                          <a href="../Results/CreditCardResults.aspx" role="button" class="btn btn-lg" id="nextButton">Get Results</a>
                      </div>
                      

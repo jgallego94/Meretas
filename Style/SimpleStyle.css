@@ -29,12 +29,42 @@
     background-repeat: no-repeat;
     height: 50em;
     text-align: center;
+    overflow:hidden;
+    
 }
 
 #CenterPane{
     font-size: 20px;
     text-align: center;
+   transition: ease-in-out 1s;
+   width: 100%;
+
 }
+
+.CenterPaneChange{
+    transform: translate(-2000px);
+}
+
+#LoginPane{
+    color:white;
+    transition: transform ease-in-out 1s;
+    float:right;
+
+}
+
+.LoginPaneChange{
+    transform: translate(-2000px);
+}
+
+
+
+
+
+#CenterContent{
+    position: relative;
+
+}
+
 
 h1{
     font-size: 60px;
@@ -71,6 +101,8 @@ h2{
     top:2vh;
     height: 5vh;
 }
+
+
 
 /*Question Page*/
 #LeftTitle{
@@ -155,6 +187,12 @@ hr.style-eight:after {
     left: 73vh;
 }
 
+#control5{
+    top: 22vh;
+    height: 10vh;
+    left: 63vh;
+}
+
 label{
     display: inline-block;
     cursor: pointer;
@@ -197,6 +235,7 @@ input[type=radio]:checked + label:before {
     font-size: 18px;
     
 }
+
 
 /*Results Page*/
 

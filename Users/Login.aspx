@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Users_Login" %>
 
 <!DOCTYPE html>
 
@@ -13,17 +13,6 @@
  
 </head>
 <body>
-
-    <script type="text/javascript">
-        
-        $(function () {
-            $("#login").click(function () {
-                $("#CenterPane").toggleClass("CenterPaneChange");
-            });
-        });
-
-    </script>
-
     <div class="row-content">
         
        <div class="col-sm-12" id="background">
@@ -39,7 +28,7 @@
                         <li><a href="Users/login.aspx">Login</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Compare</a></li>
-                        <input type="button" value="Totally Legit Login" id="login" />
+
                     </ul>
                 </div>
             </div>
@@ -49,38 +38,8 @@
             <br>
             
             <div class="col-sm-12" id="MainContent">
-                  
-            <div class="Container" id="CenterContent">
-                
-                <div class="col-sm-12" id="CenterPane">
-                <!--Page Heading-->
-
-               <div class="Jumbotron page-heading" id="Shout">
-                <h1>Find your <span style="color:#ff944d;">perfect</span> credit card</h1>
-                <br>
-                <br><br>
-                <p>
-                    <!--Page information-->
-                </p>
-                <br><br><br>
-                    <a href="Questions/Question1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a>
-                <!--  <form runat="server">
-                    <asp:Button runat="server" Text="Get Started" OnClick="Button1_Click" ID="startButton"/></form> -->
-                </div>
-
-               </div>
-
-                <div class="col-sm-12" id="LoginPane">
-                   hi sasha
-               </div>
-
+    
             </div>
-
-           
-               
-            </div>
-
-            
             
 
         <div class="col-sm-12"id="footer">

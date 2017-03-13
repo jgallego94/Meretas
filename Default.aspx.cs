@@ -15,7 +15,9 @@ public partial class _Default : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         Surveys surveysbutt = new Surveys();
+        
+        //Needs a survey ID
 
-        surveysbutt.GetSurvey();
+        //surveysbutt.GetSurvey();
     }
 }

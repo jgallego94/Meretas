@@ -37,9 +37,9 @@ public class Surveys
         return survey;
     }
 
-    public bool AddQuestion(int QuestionID, int SurveyId, string Description)
+    public bool AddQuestion(int QuestionID, int SurveyID, string Description)
     {
-        bool Successs = false;
+        bool Success = false;
 
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
@@ -54,21 +54,21 @@ public class Surveys
 
         SqlParameter QuestionIDParameter = new SqlParameter();
         QuestionIDParameter.ParameterName = "@QuestionID";
-        QuestionIDParameter.SqlDbType = SqlDbType.int;
+        QuestionIDParameter.SqlDbType = SqlDbType.Int;
         QuestionIDParameter.Value = QuestionID;
         QuestionIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter SurveyIDParameter = new SqlParameter();
         SurveyIDParameter.ParameterName = "@SurveryID";
-        SurveyIDParameter.SqlDbType = SqlDbType.int;
-        SurveyIDParameter.Value = SurveryID;
-        SurveryIDParameter.Direction = SurveryIDParameter.Input;
+        SurveyIDParameter.SqlDbType = SqlDbType.Int;
+        SurveyIDParameter.Value = SurveyID;
+        SurveyIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter DescriptionParameter = new SqlParameter();
         DescriptionParameter.ParameterName = "@Description";
         DescriptionParameter.SqlDbType = SqlDbType.VarChar;
         DescriptionParameter.Value = Description;
-        DescriptionParameter.Direction = Input;
+        DescriptionParameter.Direction = ParameterDirection.Input;
 
         AddCommand.Parameters.Add(QuestionIDParameter);
         AddCommand.Parameters.Add(SurveyIDParameter);
@@ -85,7 +85,7 @@ public class Surveys
 
     public bool AddResponse(int ResponseID, int QuestionID, int SurveyID, string Description)
     {
-        bool Successs = false;
+        bool Success = false;
 
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
@@ -100,36 +100,36 @@ public class Surveys
 
         SqlParameter ResponseIDParameter = new SqlParameter();
         ResponseIDParameter.ParameterName = "@ResponseID";
-        ResponseIDParameter.SqlDbType = SqlDbType.int;
+        ResponseIDParameter.SqlDbType = SqlDbType.Int;
         ResponseIDParameter.Value = ResponseID;
         ResponseIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter QuestionIDParameter = new SqlParameter();
         QuestionIDParameter.ParameterName = "@QuestionID";
-        QuestionIDParameter.SqlDbType = SqlDbType.int;
+        QuestionIDParameter.SqlDbType = SqlDbType.Int;
         QuestionIDParameter.Value = QuestionID;
         QuestionIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter SurveyIDParameter = new SqlParameter();
         SurveyIDParameter.ParameterName = "@SurveryID";
-        SurveyIDParameter.SqlDbType = SqlDbType.int;
-        SurveyIDParameter.Value = SurveryID;
-        SurveryIDParameter.Direction = SurveryIDParameter.Input;
+        SurveyIDParameter.SqlDbType = SqlDbType.Int;
+        SurveyIDParameter.Value = SurveyID;
+        SurveyIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter DescriptionParameter = new SqlParameter();
         DescriptionParameter.ParameterName = "@Description";
         DescriptionParameter.SqlDbType = SqlDbType.VarChar;
         DescriptionParameter.Value = Description;
-        DescriptionParameter.Direction = Input;
+        DescriptionParameter.Direction = ParameterDirection.Input;
 
         AddCommand.Parameters.Add(ResponseIDParameter);
         AddCommand.Parameters.Add(QuestionIDParameter);
-        AddCommand.Parameters.Add(SurveryIDParameter);
+        AddCommand.Parameters.Add(SurveyIDParameter);
         AddCommand.Parameters.Add(DescriptionParameter);
 
         AddCommand.ExecuteNonQuery();
 
-        Successs = true;
+        Success = true;
 
         meretas.Close();
 
@@ -154,15 +154,15 @@ public class Surveys
 
         SqlParameter SurveyIDParameter = new SqlParameter();
         SurveyIDParameter.ParameterName = "@SurveryID";
-        SurveyIDParameter.SqlDbType = SqlDbType.int;
-        SurveyIDParameter.Value = SurveryID;
-        SurveryIDParameter.Direction = SurveryIDParameter.Input;
+        SurveyIDParameter.SqlDbType = SqlDbType.Int;
+        SurveyIDParameter.Value = SurveyID;
+        SurveyIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter DescriptionParameter = new SqlParameter();
         DescriptionParameter.ParameterName = "@Description";
         DescriptionParameter.SqlDbType = SqlDbType.VarChar;
         DescriptionParameter.Value = Description;
-        DescriptionParameter.Direction = Input;
+        DescriptionParameter.Direction = ParameterDirection.Input;
 
         AddCommand.Parameters.Add(SurveyIDParameter);
         AddCommand.Parameters.Add(DescriptionParameter);
@@ -193,13 +193,13 @@ public class Surveys
 
         SqlParameter SurveyIDParameter = new SqlParameter();
         SurveyIDParameter.ParameterName = "@SurveryID";
-        SurveyIDParameter.SqlDbType = SqlDbType.int;
-        SurveyIDParameter.Value = SurveryID;
-        SurveryIDParameter.Direction = SurveryIDParameter.Input;
+        SurveyIDParameter.SqlDbType = SqlDbType.Int;
+        SurveyIDParameter.Value = SurveyID;
+        SurveyIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter VisitorIDParameter = new SqlParameter();
         VisitorIDParameter.ParameterName = "@VisitorID";
-        VisitorIDParameter.SqlDbType = SqlDbType.int;
+        VisitorIDParameter.SqlDbType = SqlDbType.Int;
         VisitorIDParameter.Value = VisitorID;
         VisitorIDParameter.Direction = ParameterDirection.Input;
 
@@ -234,25 +234,25 @@ public class Surveys
 
         SqlParameter VisitorIDParameter = new SqlParameter();
         VisitorIDParameter.ParameterName = "@VisitorID";
-        VisitorIDParameter.SqlDbType = SqlDbType.int;
+        VisitorIDParameter.SqlDbType = SqlDbType.Int;
         VisitorIDParameter.Value = VisitorID;
         VisitorIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter SurveyIDParameter = new SqlParameter();
         SurveyIDParameter.ParameterName = "@SurveryID";
-        SurveyIDParameter.SqlDbType = SqlDbType.int;
-        SurveyIDParameter.Value = SurveryID;
-        SurveryIDParameter.Direction = SurveryIDParameter.Input;
+        SurveyIDParameter.SqlDbType = SqlDbType.Int;
+        SurveyIDParameter.Value = SurveyID;
+        SurveyIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter QuestionIDParameter = new SqlParameter();
         QuestionIDParameter.ParameterName = "@QuestionID";
-        QuestionIDParameter.SqlDbType = SqlDbType.int;
+        QuestionIDParameter.SqlDbType = SqlDbType.Int;
         QuestionIDParameter.Value = QuestionID;
         QuestionIDParameter.Direction = ParameterDirection.Input;
 
         SqlParameter ResponseIDParameter = new SqlParameter();
         ResponseIDParameter.ParameterName = "@ResponseID";
-        ResponseIDParameter.SqlDbType = SqlDbType.int;
+        ResponseIDParameter.SqlDbType = SqlDbType.Int;
         ResponseIDParameter.Value = ResponseID;
         ResponseIDParameter.Direction = ParameterDirection.Input;
 
@@ -270,7 +270,7 @@ public class Surveys
 
         SqlParameter ResponseInstanceIDParameter = new SqlParameter();
         ResponseInstanceIDParameter.ParameterName = "@ResponseInstanceID";
-        ResponseInstanceIDParameter.SqlDbType = SqlDbType.int;
+        ResponseInstanceIDParameter.SqlDbType = SqlDbType.Int;
         ResponseInstanceIDParameter.Value = ResponseInstanceID;
         ResponseInstanceIDParameter.Direction = ParameterDirection.Input;
 

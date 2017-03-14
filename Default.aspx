@@ -7,9 +7,9 @@
      <title>Meretes 2</title>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="Style/SimpleStyle.css">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
      <link href="https://fonts.googleapis.com/css?family=Cinzel|Open+Sans+Condensed:300" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="Style/SimpleStyle.css">
  
 </head>
 <body>
@@ -19,6 +19,7 @@
         $(function () {
             $("#login").click(function () {
                 $("#CenterPane").toggleClass("CenterPaneChange");
+                $("#LoginPane").toggleClass("LoginPaneChange");
             });
         });
 
@@ -28,18 +29,18 @@
         
        <div class="col-sm-12" id="background">
            <!--Navigation bar-->
-            <nav class="navbar navbar-default" style="height:6.5em; background: rgba(0,0,0,0); border: rgba(0,0,0,0);">
+            <nav class="navbar navbar-default" style="height:6.5em; background: rgba(0,0,0,0); border: rgba(0,0,0,0); color:white;">
             <div class="container-fluid">
-                <div class="navbar-header">
+                <div class="navbar-header" id="Meretas">
                     <!--Meretas Title top right-->
                     <a class="navbar-brand" href="Default.aspx"><h3 style="color:white;"><span style="color:#ff944d; font-size: 50px;">M</span>ERETAS</h3></a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Users/login.aspx">Login</a></li>
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li><a href="#" id="login">Login</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Compare</a></li>
-                        <input type="button" value="Totally Legit Login" id="login" />
+                        <!--<input type="button" value="Totally Legit Login" id="login" /> -->
                     </ul>
                 </div>
             </div>
@@ -69,9 +70,20 @@
                 </div>
 
                </div>
+               
+                   <div class="col-sm-4" id="LoginPane">
+                        <form>
+                            <div class="form-group">
+                                <input type ="email" class="form-control" id="email" placeholder="Email@example.ca" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password" />
+                            </div>
+                            <button type="submit" class="btn btn-md" id="startButton">Login</button>
+                        </form>
+                   </div>
+              
 
-                <div class="col-sm-12" id="LoginPane">
-                   hi sasha
                </div>
 
             </div>

@@ -36,8 +36,8 @@
 #CenterPane{
     font-size: 20px;
     text-align: center;
-   transition: ease-in-out 1s;
-   width: 100%;
+    transition: ease-in-out 1s;
+    width: 100%;
 
 }
 
@@ -49,16 +49,26 @@
     color:white;
     transition: transform ease-in-out 1s;
     float:right;
-
+    right: -1650px;
+    top: 20vh;
+    position: absolute;
+    
 }
 
 .LoginPaneChange{
     transform: translate(-2000px);
 }
 
+#Meretas{
+    transition: transform ease-in-out 1s;
+    position: absolute;
 
+}
 
-
+.MeretasAnim{
+    transform: translate(2000px,2000px);
+    
+}
 
 #CenterContent{
     position: relative;
@@ -102,6 +112,13 @@ h2{
     height: 5vh;
 }
 
+.navbar-default .navbar-nav > li > a{
+    color:white;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ff944d;
+}
 
 
 /*Question Page*/

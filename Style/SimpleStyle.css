@@ -66,7 +66,7 @@
 }
 
 .MeretasAnim{
-    transform: translate(506px,230px);
+    transform: translate(500px,230px);
  
     
 }
@@ -113,9 +113,9 @@ h2{
   border-radius: 20px;
   font-family: Arial;
   color: #ffffff;
-  font-size: 25px;
+  font-size: 20px;
   background: #ff944d;
-  padding: 10px 35px 10px 35px;
+  padding: 10px 30px 10px 30px;
   text-decoration: none;
 }
 

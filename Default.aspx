@@ -73,32 +73,44 @@
                
                    <div class="col-sm-4" id="LoginPane">
                        <form id="LoginForm" runat="server">
+                           <div class="form-group">
 
                        <asp:Table ID="LoginTabel" runat="server">
                            <asp:TableRow>
                                <asp:TableCell>
-                                    <span style="color:#ff944d;" class="glyphicon glyphicon-user"></span>
+                                    <span style="color:#ff944d;" class="glyphicon glyphicon-user"> </span>
                                </asp:TableCell>
                                <asp:TableCell>
-                                   <asp:TextBox ID="Email" runat="server"></asp:TextBox>
-                               </asp:TableCell>
-                           </asp:TableRow>
-                           <asp:TableRow>
-                               <asp:TableCell>
-                                   <span style="color:#ff944d;" class="glyphicon glyphicon-lock"></span>
-                               </asp:TableCell>
-                               <asp:TableCell>
-                                   <asp:TextBox ID="password" TextMode="Password" runat="server"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="Email" runat="server"></asp:TextBox>
                                </asp:TableCell>
                            </asp:TableRow>
                            <asp:TableRow>
                                <asp:TableCell>
-                                   <asp:Button ID="Login" OnClick="Login_Click" Text="Login" runat="server" />
+                                   <br />
+                               </asp:TableCell>
+                           </asp:TableRow>
+                           <asp:TableRow>
+                               <asp:TableCell>
+                                   <span style="color:#ff944d;" class="glyphicon glyphicon-lock"> </span>
+                               </asp:TableCell>
+                               <asp:TableCell>
+                                   <span></span><asp:TextBox CssClass="form-control" ID="password" TextMode="Password" runat="server"></asp:TextBox><br />
+                               </asp:TableCell>
+                           </asp:TableRow>
+                           <asp:TableRow>
+                               <asp:TableCell>
+                                   <span> </span>
+                               </asp:TableCell>
+                               <asp:TableCell>
+                                   <asp:Button CssClass="btn btn-sm" id="loginButton" OnClick="Login_Click" Text="Login" runat="server" />
                                </asp:TableCell>
                               
                            </asp:TableRow>
                        </asp:Table>
+                       </div>
                       </form>
+                  
+
                    </div>
               
 

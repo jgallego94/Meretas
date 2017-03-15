@@ -66,7 +66,8 @@
 }
 
 .MeretasAnim{
-    transform: translate(2000px,2000px);
+    transform: translate(506px,230px);
+ 
     
 }
 
@@ -106,6 +107,24 @@ h2{
   color: white;
 }
 
+#loginButton{
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  background: #ff944d;
+  padding: 10px 35px 10px 35px;
+  text-decoration: none;
+}
+
+#loginButton:hover{
+  background:#ff751a;
+  text-decoration: none;
+  color: white;
+}
+
 #footer{
     background-color: black;
     top:2vh;
@@ -118,6 +137,12 @@ h2{
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ff944d;
+}
+
+.form-group > input{
+     color: #ff944d;
+     width: 30vh;
+     float: right;
 }
 
 

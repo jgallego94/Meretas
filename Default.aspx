@@ -20,6 +20,7 @@
             $("#login").click(function () {
                 $("#CenterPane").toggleClass("CenterPaneChange");
                 $("#LoginPane").toggleClass("LoginPaneChange");
+                $("#Meretas").toggleClass("MeretasAnim");
             });
         });
 
@@ -65,22 +66,39 @@
                 </p>
                 <br><br><br>
                     <a href="Questions/Question1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a>
-                <!--  <form runat="server">
-                    <asp:Button runat="server" Text="Get Started" OnClick="Button1_Click" ID="startButton"/></form> -->
+
                 </div>
 
                </div>
                
                    <div class="col-sm-4" id="LoginPane">
-                        <form>
-                            <div class="form-group">
-                                <input type ="email" class="form-control" id="email" placeholder="Email@example.ca" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password" />
-                            </div>
-                            <button type="submit" class="btn btn-md" id="startButton">Login</button>
-                        </form>
+                       <form id="LoginForm" runat="server">
+
+                       <asp:Table ID="LoginTabel" runat="server">
+                           <asp:TableRow>
+                               <asp:TableCell>
+                                    <span style="color:#ff944d;" class="glyphicon glyphicon-user"></span>
+                               </asp:TableCell>
+                               <asp:TableCell>
+                                   <asp:TextBox ID="Email" runat="server"></asp:TextBox>
+                               </asp:TableCell>
+                           </asp:TableRow>
+                           <asp:TableRow>
+                               <asp:TableCell>
+                                   <span style="color:#ff944d;" class="glyphicon glyphicon-lock"></span>
+                               </asp:TableCell>
+                               <asp:TableCell>
+                                   <asp:TextBox ID="password" TextMode="Password" runat="server"></asp:TextBox>
+                               </asp:TableCell>
+                           </asp:TableRow>
+                           <asp:TableRow>
+                               <asp:TableCell>
+                                   <asp:Button ID="Login" OnClick="Login_Click" Text="Login" runat="server" />
+                               </asp:TableCell>
+                              
+                           </asp:TableRow>
+                       </asp:Table>
+                      </form>
                    </div>
               
 
@@ -100,7 +118,5 @@
         </div>
        </div> 
        
-     
-     </div>
 </body>
 </html>

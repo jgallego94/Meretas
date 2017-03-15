@@ -78,10 +78,20 @@
                        <asp:Table ID="LoginTabel" runat="server">
                            <asp:TableRow>
                                <asp:TableCell>
-                                    <span style="color:#ff944d;" class="glyphicon glyphicon-user"> </span>
+                                    <span style="color:#ff944d; padding-right:5px;" class="glyphicon glyphicon-user"> </span>
                                </asp:TableCell>
                                <asp:TableCell>
-                                   <asp:TextBox CssClass="form-control" ID="Email" runat="server"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="Email" runat="server" placeholder="E-mail"></asp:TextBox>
+
+                                   <asp:RegularExpressionValidator 
+                                       ID="EmailValidator" 
+                                       runat="server" 
+                                       ControlToValidate = "Email"
+                                       ValidationExpression ="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
+                                       ErrorMessage="Enter a valid email, moron."
+                                       style="color:red;">
+
+                                   </asp:RegularExpressionValidator>
                                </asp:TableCell>
                            </asp:TableRow>
                            <asp:TableRow>
@@ -91,10 +101,10 @@
                            </asp:TableRow>
                            <asp:TableRow>
                                <asp:TableCell>
-                                   <span style="color:#ff944d;" class="glyphicon glyphicon-lock"> </span>
+                                   <span style="color:#ff944d; padding-right:5px;" class="glyphicon glyphicon-lock"> </span>
                                </asp:TableCell>
                                <asp:TableCell>
-                                   <span></span><asp:TextBox CssClass="form-control" ID="password" TextMode="Password" runat="server"></asp:TextBox><br />
+                                   <span></span><asp:TextBox CssClass="form-control" ID="Password" TextMode="Password" placeholder ="Password" runat="server"></asp:TextBox><br />
                                </asp:TableCell>
                            </asp:TableRow>
                            <asp:TableRow>

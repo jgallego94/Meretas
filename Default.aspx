@@ -88,7 +88,7 @@
                                        runat="server" 
                                        ControlToValidate = "Email"
                                        ValidationExpression ="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
-                                       ErrorMessage="Enter a valid email, moron."
+                                       ErrorMessage="Please enter a valid e-mail"
                                        style="color:red;">
 
                                    </asp:RegularExpressionValidator>
@@ -104,7 +104,17 @@
                                    <span style="color:#ff944d; padding-right:5px;" class="glyphicon glyphicon-lock"> </span>
                                </asp:TableCell>
                                <asp:TableCell>
-                                   <span></span><asp:TextBox CssClass="form-control" ID="Password" TextMode="Password" placeholder ="Password" runat="server"></asp:TextBox><br />
+                                   <span></span><asp:TextBox CssClass="form-control" ID="Password" TextMode="Password" placeholder ="Password" runat="server"></asp:TextBox>
+
+                                   <asp:RequiredFieldValidator
+                                       ID="PasswordRequired"
+                                       runat="server"
+                                       ErrorMessage="Please enter a password"
+                                       ControlToValidate="Password"
+                                       Display="Dynamic"
+                                       style="color:red">
+
+                                   </asp:RequiredFieldValidator><br />
                                </asp:TableCell>
                            </asp:TableRow>
                            <asp:TableRow>

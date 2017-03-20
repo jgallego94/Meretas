@@ -147,6 +147,22 @@ h2{
 
 
 /*Question Page*/
+.carousel{
+    border-radius: 55px;
+    overflow: hidden;
+}
+
+.carousel-control { 
+    background-image:none !important; 
+    border-radius: 25px;
+    overflow:hidden;
+}
+
+.carousel-control.right a{
+    right: 400px;
+    margin-right: 400px;
+}
+
 #LeftTitle{
     height: 80vh;
     color: white;
@@ -161,6 +177,17 @@ h2{
     border-radius: 25px;
     background-image: url('../Images/QuestionBackground.jpg');
     background-size: cover;
+}
+
+#Question{
+    top: 6vh;
+    height: 60vh;
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    background-image: url('../Images/QuestionBackground.jpg');
+    background-size: cover;
+    overflow: hidden;
 }
 
 #QuestionBackground{

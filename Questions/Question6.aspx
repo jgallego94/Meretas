@@ -46,7 +46,7 @@
                      </div>
                  </div>
              </nav>
-            >
+            
              <!--Question div-->
              <div class="col-sm-2">
 

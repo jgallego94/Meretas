@@ -65,7 +65,7 @@
                     <!--Page information-->
                 </p>
                 <br><br><br>
-                    <a href="Questions/Question1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a>
+                    <a href="Questions/QuestionsV1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a>
 
                 </div>
 

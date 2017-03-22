@@ -1,4 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Main.aspx.cs" Inherits="Users_Main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" Inherits="Users_Admin" %>
+
+<%if (Request.Cookies["UserName"] == null)
+    {
+        Response.Redirect("../Default.aspx");
+    }
+    else
+    {
+        WelcomeLabel.Text = Server.HtmlEncode(Request.Cookies["UserName"].Value);
+    }
+%>
 
 <!DOCTYPE html>
 
@@ -16,6 +26,7 @@
     </script>
 </head>
 <body>
+   
     <div class="row-content">
          <div class="col-sm-12" id="UserBackground">
              <nav class="navbar navbar-default" style="height:6.5em; background: rgba(0,0,0,0); border: rgba(0,0,0,0); color:white;">
@@ -33,6 +44,9 @@
                 </div>
             </div>
         </nav>
+             <h1 style="color:white;">Welcome <asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
+
+
          </div>    
      </div>
 </body>

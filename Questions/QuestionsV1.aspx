@@ -35,6 +35,7 @@
                      </div>
                  </div>
              </nav>
+             <br /><br />
              <form id="QuestionForm">
                  <div id="formCarousel" style="border-radius:25px;" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                      <div class="carousel-inner">
@@ -48,12 +49,16 @@
                                  <h2>What type of card are you looking for?</h2>
 
                                  <div class="radio">
+                                     <br />
                                  <input type="radio" id="Personal" name="q1" value="1"  />
                                  <label for="Personal"> Personal</label>
                                  <br /><br /><br />
                                  <input id="Business" type="radio"  name="q1" value="2" />
                                  <label for="Business"> Business</label>
+
+                                       
                                  </div>
+                                 <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
 
                              </div>
                              <div class="col-sm-2">
@@ -80,7 +85,10 @@
                                      <br />
                                      <input id="Student" type="radio" name="q2" value="3" />
                                      <label for="Student">Student</label><br />
+
+                                       
                                 </div>
+                                 <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
                              </div>
                              <div class="col-sm-2">
 
@@ -106,7 +114,10 @@
                                      <br />
                                      <input id="CashBack" type="radio" name="q3" value="3" />
                                      <label for="CashBack">Cash Back</label>
+
+                                     
                                 </div>
+                                    <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
 
                              </div>
                              <div class="col-sm-2">
@@ -114,12 +125,60 @@
                              </div>
                          </div>
 
+                         <div class="item">
+                             <div class="col-sm-2">
+
+                             </div>
+
+                             <div class="col-sm-8" id="Question">
+                                 <br />
+                                 <hr class="style-eight" />
+                                 <h2>Do you plan to carry a balance for longer than 6 months?</h2>
+
+                                 <div class="radio">
+                                    <br />
+                                     <input id="Yes" type="radio" name="q4" value="1" />
+                                     <label for="Yes">Yes</label><br />
+                                     <br />
+                                     <input id="No" type="radio" name="q4" value="2" />
+                                     <label for="No">No</label><br />
+                                     <br />
+                                 </div>
+                                    <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
+                             </div>
+
+                             <div class="col-sm-2">
+
+                             </div>
+                         </div>
+
+                         <div class="item">
+                             <div class="col-sm-2">
+
+                             </div>
+
+                             <div class="col-sm-8" id="Question">
+                                 <br />
+                                 <hr class="style-eight" />
+                                 <h2>Have you recently been discharged from bankruptcy or credit conselling?</h2>
+
+                                   <div class="radio">
+                                       <br />
+                                       <input id="Yes2" type="radio" name="q6" value="1" />
+                                       <label for="Yes2">Yes</label><br />
+                                       <br />
+                                       <input id="No2" type="radio" name="q6" value="2" />
+                                       <label for="No2">No</label>
+                                    </div>
+                                  <a href="../Results/CreditCardResults.aspx" role="button" class="btn btn-lg" id="nextButton">Get Results</a>
+                             </div>
+
+                             <div class="col-sm-2">
+
+                             </div>
+                         </div>
+
                      </div>
-
-                 <%--    <a class="right carousel-control" href="#formCarousel" role="button" data-slide="next">
-
-                     </a>--%>
-                     <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
 
                  </div>
               </form>

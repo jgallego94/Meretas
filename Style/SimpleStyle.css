@@ -147,6 +147,7 @@ h2{
 
 
 /*Question Page*/
+
 .carousel{
     border-radius: 55px;
     overflow: hidden;
@@ -155,13 +156,19 @@ h2{
 .carousel-control { 
     background-image:none !important; 
     border-radius: 25px;
-    overflow:hidden;
+    overflow:hidden; 
 }
 
 .carousel-control.right a{
     right: 400px;
     margin-right: 400px;
+    overflow:hidden;
 }
+
+.carousel .item{
+    border-radius: 25px;
+}
+
 
 #LeftTitle{
     height: 80vh;
@@ -176,16 +183,15 @@ h2{
     background-color: white;
     border-radius: 25px;
     background-image: url('../Images/QuestionBackground.jpg');
-    background-size: cover;
+    background-size: cover;    
 }
 
 #Question{
-    top: 6vh;
     height: 60vh;
     color: black;
     background-color: white;
-    border-radius: 25px;
-    background-image: url('../Images/QuestionBackground.jpg');
+    border-radius: 25px; 
+    background-image: url('../Images/QuestionBackground.jpg'); 
     background-size: cover;
     overflow: hidden;
 }
@@ -195,8 +201,6 @@ h2{
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-  
-
 }
 
 hr.style-eight {
@@ -227,6 +231,9 @@ hr.style-eight:after {
   background: #ff944d;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  position:absolute;
+  right:2vh;
+  top: 52vh;
 }
 
 #nextButton:hover {
@@ -235,32 +242,6 @@ hr.style-eight:after {
   color: white;
 }
 
-#control{
-    top: 23vh;
-    height: 10vh;
-    left: 73vh;
-}
-#control2{
-    top: 22.5vh;
-    height: 10vh;
-    left: 73vh;
-}
-#control3{
-    top: 20.5vh;
-    height: 10vh;
-    left: 73vh;
-}
-#control4{
-    top: 12.5vh;
-    height: 10vh;
-    left: 73vh;
-}
-
-#control5{
-    top: 22vh;
-    height: 10vh;
-    left: 63vh;
-}
 
 label{
     display: inline-block;
@@ -302,9 +283,23 @@ input[type=radio]:checked + label:before {
 
 #RadioText{
     font-size: 18px;
-    
 }
 
+.Radio{
+    padding-left: 5vh;
+}
+
+.carousel, .slide,
+.carousel .carousel-inner,
+.carousel .carousel-item,
+.carousel .carousel-item img,
+.carousel .carousel-control,
+ #QuestionForm
+ {
+  border-radius: 25px 25px 25px 25px;
+  background-color: rgba(0,0,0,0);
+  overflow: hidden;
+}
 
 /*Results Page*/
 
@@ -314,4 +309,13 @@ input[type=radio]:checked + label:before {
     color:black;
     background-color: white;
     border-radius: 25px;
+}
+
+/*User Page*/
+
+#UserBackground{
+    background-image: url("https://static.pexels.com/photos/4097/city-cars-traffic-lights.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }

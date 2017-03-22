@@ -32,17 +32,39 @@ public partial class _Default : System.Web.UI.Page
         meretas.ConnectionString = WebSettings.ConnectionString;
         meretas.Open();
 
-        SqlCommand login = new SqlCommand("SELECT Email FROM Users WHERE Email = @Email AND Password = @Password", meretas);
+        SqlCommand login = new SqlCommand("SELECT Email, Role FROM Users WHERE Email = @Email AND Password = @Password", meretas);
+        login.CommandType = CommandType.Text;
+
         login.Parameters.AddWithValue("@Email", Email.Text);
         login.Parameters.AddWithValue("@Password", Password.Text);
 
         SqlDataAdapter DataAdapter = new SqlDataAdapter(login);
+        DataAdapter.TableMappings.Add("UserName", "Role");
+        DataAdapter.SelectCommand = login;
+
+
+
         DataTable loginTable = new DataTable();
-        DataAdapter.Fill(loginTable);
+
+        DataSet loginSet = new DataSet("Users");
+        DataAdapter.Fill(loginSet);
+
+        loginSet.Tables.Add(loginTable);
+
 
         if(loginTable.Rows.Count>0)
         {
-            Response.Redirect("Users/Main.aspx");
+            Response.Cookies["UserName"].Value = loginTable.Rows[0].ToString();
+            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(1);
+
+            if (loginTable.Rows[0].ToString().Equals("admin"))
+            {
+                Response.Redirect("Users/Admin.aspx");
+            }
+            else if(loginTable.Rows[0].ToString().Equals("member"))
+            {
+                Response.Redirect("Users/Main.aspx");
+            } 
         }
                
 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" Inherits="Users_Admin" %>
 
-<%if (Request.Cookies["UserName"] == null)
+<%--<%if (Request.Cookies["UserName"] == null)
     {
         Response.Redirect("../Default.aspx");
     }
@@ -8,7 +8,7 @@
     {
         WelcomeLabel.Text = Server.HtmlEncode(Request.Cookies["UserName"].Value);
     }
-%>
+%>--%>
 
 <!DOCTYPE html>
 
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </nav>
-             <h1 style="color:white;">Welcome <asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
+             <h1 style="color:white;">Welcome admin<asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
 
 
          </div>    

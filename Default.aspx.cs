@@ -26,48 +26,24 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Login_Click(object sender, EventArgs e)
     {
-        ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
-        SqlConnection meretas = new SqlConnection();
+        MeretasCodeHandler MCH = new MeretasCodeHandler();
+        Member activeMember = new Member();
 
-        meretas.ConnectionString = WebSettings.ConnectionString;
-        meretas.Open();
+        activeMember = MCH.LoginMember(Email.Text, Password.Text);
 
-        SqlCommand login = new SqlCommand("SELECT Email, Role FROM Users WHERE Email = @Email AND Password = @Password", meretas);
-        login.CommandType = CommandType.Text;
+        Response.Cookies["MemberID"].Value = activeMember.memberID;
+        Response.Cookies["isAdmin"].Value = activeMember.isAdmin.ToString();
 
-        login.Parameters.AddWithValue("@Email", Email.Text);
-        login.Parameters.AddWithValue("@Password", Password.Text);
-
-        SqlDataAdapter DataAdapter = new SqlDataAdapter(login);
-        DataAdapter.TableMappings.Add("UserName", "Role");
-        DataAdapter.SelectCommand = login;
-
-
-
-        DataTable loginTable = new DataTable();
-
-        DataSet loginSet = new DataSet("Users");
-        DataAdapter.Fill(loginSet);
-
-        loginSet.Tables.Add(loginTable);
-
-
-        if(loginTable.Rows.Count>0)
+        if(activeMember.memberID != null)
         {
-            Response.Cookies["UserName"].Value = loginTable.Rows[0].ToString();
-            Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(1);
-
-            if (loginTable.Rows[0].ToString().Equals("admin"))
+            if(activeMember.isAdmin == 1)
             {
                 Response.Redirect("Users/Admin.aspx");
             }
-            else if(loginTable.Rows[0].ToString().Equals("member"))
+            else
             {
                 Response.Redirect("Users/Main.aspx");
-            } 
+            }
         }
-               
-
-
     }
 }

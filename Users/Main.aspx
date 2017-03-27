@@ -33,6 +33,7 @@
                 </div>
             </div>
         </nav>
+             <h1 style="color:white;">Welcome user<asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
          </div>    
      </div>
 </body>

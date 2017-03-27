@@ -8,6 +8,12 @@ using System.Configuration;
 
 public class MeretasCodeHandler
 {
+    public Member LoginMember(string email, string password)
+    {
+        Members MemberManager = new Members();
+        return MemberManager.loginMember(email, password);
+    }
+
    public bool AddQuestion(int QuestionID, int SurveyID, string Description)
    {
        bool Confirmation = false;

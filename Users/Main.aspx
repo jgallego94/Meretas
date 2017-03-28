@@ -14,6 +14,15 @@
     <script type="text/javascript">
 
     </script>
+    <%if (Request.Cookies["MemberID"] == null)
+    {
+        Response.Redirect("../Default.aspx");
+    }
+    else
+    {
+        WelcomeLabel.Text = Server.HtmlEncode(Request.Cookies["MemberID"].Value);
+    }
+%>
 </head>
 <body>
     <div class="row-content">
@@ -26,6 +35,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" >
+                     
                         <li><a href="../Default.aspx" id="login">Logout</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Compare</a></li>           
@@ -33,7 +43,7 @@
                 </div>
             </div>
         </nav>
-             <h1 style="color:white;">Welcome user<asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
+             <h1 style="color:white;">Welcome user <asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
          </div>    
      </div>
 </body>

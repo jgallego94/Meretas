@@ -1,12 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" Inherits="Users_Admin" %>
 
-<%if (Request.Cookies["MemberID"] == null)
+<%if (Request.Cookies["MemberID"] == null || Request.Cookies["isAdmin"].Value.Equals("0"))
     {
-        Response.Redirect("../Default.aspx");
+      Response.Redirect("../Default.aspx");
     }
     else
     {
-        WelcomeLabel.Text = Server.HtmlEncode(Request.Cookies["MemberID"].Value);
+      WelcomeLabel.Text = Server.HtmlEncode(Request.Cookies["MemberID"].Value);
     }
 %>
 
@@ -26,6 +26,9 @@
     </script>
 </head>
 <body>
+    <form runat="server">
+
+    
    
     <div class="row-content">
          <div class="col-sm-12" id="UserBackground">
@@ -37,7 +40,8 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" >
-                        <li><a href="../Default.aspx" id="login">Logout</a></li>
+                        <li><asp:Button ID="Logout" Text="Logout" cssClass="link" runat="server" OnClick="Logout_Click"/></li>
+                        <!--<li><a href="../Default.aspx" id="login">Logout</a></li> -->
                         <li><a href="#">About</a></li>
                         <li><a href="#">Compare</a></li>           
                     </ul>
@@ -49,5 +53,6 @@
 
          </div>    
      </div>
+        </form>
 </body>
 </html>

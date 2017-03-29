@@ -9,9 +9,11 @@ using System.Configuration;
 public class Surveys
 {
     //using surveyID to return survey, still needs work
-    public Survey GetSurvey(int SurveyID)
+    public Survey LoadSurvey(int SurveyID)
     {
-        Survey survey = new Survey(); 
+        Survey survey = new Survey();
+        List<Question> QuestionList = new List<Question>();
+        List<string> ResponseList = new  
 
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
@@ -19,18 +21,26 @@ public class Surveys
         meretas.ConnectionString = WebSettings.ConnectionString;
         meretas.Open();
 
-        SqlCommand GetCommand = new SqlCommand();
-        GetCommand.Connection = meretas;
-        GetCommand.CommandType = CommandType.StoredProcedure;
-        GetCommand.CommandText = "GetSurvey";
+        SqlCommand LoadCommand = new SqlCommand();
+        LoadCommand.Connection = meretas;
+        LoadCommand.CommandType = CommandType.StoredProcedure;
+        LoadCommand.CommandText = "LoadSurvey";
 
-        SqlDataReader Reader = GetCommand.ExecuteReader();
+        SqlParameter SurveyIDParameter = new SqlParameter();
+        SurveyIDParameter.ParameterName = "@SurveyID";
+        SurveyIDParameter.SqlDbType = SqlDbType.Int;
+        SurveyIDParameter.Value = SurveyID;
+        SurveyIDParameter.Direction = ParameterDirection.Input;
 
-        if(Reader.HasRows)
+        LoadCommand.Parameters.Add(SurveyIDParameter);
+
+        SqlDataReader LoadReader = LoadCommand.ExecuteReader();
+
+        if(LoadReader.HasRows)
         {
-            while(Reader.Read())
+            while(LoadReader.Read())
             {
-                survey.Description = Reader["Description"].ToString(); 
+                
             }
         }
 

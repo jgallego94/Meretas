@@ -9,6 +9,8 @@ using System.Web;
 public class Survey
 {
     private string descriptionValue;
+    private List<Question> QuestionList = new List<Question>();
+
     public string Description
     {
         get { return descriptionValue; }

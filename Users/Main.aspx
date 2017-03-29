@@ -34,12 +34,13 @@
                     <a class="navbar-brand" href="../Default.aspx"><h3 style="color:white;"><span style="color:#ff944d; font-size: 50px;">M</span>ERETAS</h3></a>
                 </div>
                 <div class="collapse navbar-collapse">
+                    <form>
                     <ul class="nav navbar-nav navbar-right" >
-                     
                         <li><a href="../Default.aspx" id="login">Logout</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Compare</a></li>           
                     </ul>
+                    </form>
                 </div>
             </div>
         </nav>

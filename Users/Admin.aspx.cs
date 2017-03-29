@@ -11,4 +11,15 @@ public partial class Users_Admin : System.Web.UI.Page
     {
 
     }
+
+    protected void Logout_Click(object sender, EventArgs e)
+    {
+        Response.Cookies["MemberID"].Value = null;
+        Response.Cookies["MemberID"].Expires = DateTime.Now.AddDays(-1d);
+
+        Response.Cookies["isAdmin"].Value = null;
+        Response.Cookies["isAdmin"].Expires = DateTime.Now.AddDays(-1d);
+
+        Response.Redirect("../Default.aspx");
+    }
 }

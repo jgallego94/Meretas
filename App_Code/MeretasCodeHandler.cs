@@ -28,7 +28,7 @@ public class MeretasCodeHandler
    {
        Surveys SurveyManager = new Surveys();
        //Assuming you need a surveyId to return a survey
-       return SurveyManager.GetSurvey(SurveyID);
+       return SurveyManager.LoadSurvey(SurveyID);
    }
 
 

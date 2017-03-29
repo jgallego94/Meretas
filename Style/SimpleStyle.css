@@ -135,6 +135,7 @@ h2{
     color:white;
 }
 
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ff944d;
 }
@@ -143,6 +144,22 @@ h2{
      color: #ff944d;
      width: 30vh;
      float: right;
+}
+
+.link{
+    color: white;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    text-decoration:none;
+    padding: 0px;
+    width: 8.5vh;
+    height: 5.5vh;
+    display: inline-block;
+}
+
+.link:hover{
+    color: #ff944d;
 }
 
 

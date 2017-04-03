@@ -51,10 +51,12 @@
             <br>
             
             <div class="col-sm-12" id="MainContent">
-                  
+                     <asp:Panel ID="startPanel" runat="server" DefaultButton="startButton">
+                       <form runat="server">
             <div class="Container" id="CenterContent">
                 
                 <div class="col-sm-12" id="CenterPane">
+                  
                 <!--Page Heading-->
 
                <div class="Jumbotron page-heading" id="Shout">
@@ -65,14 +67,18 @@
                     <!--Page information-->
                 </p>
                 <br><br><br>
-                    <a href="Questions/QuestionsV1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a>
-
+                  
+                  <!--  <a href="Questions/QuestionsV1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a> -->
+                     <asp:Button CssClass="btn btn-sm" id="startButton" OnClick="startButton_Click" Text="Get Started" runat="server" /> 
+                           
+             
                 </div>
 
                </div>
                
+               
                    <div class="col-sm-4" id="LoginPane">
-                       <form id="LoginForm" runat="server">
+                     
                            <div class="form-group">
 
                        <asp:Table ID="LoginTabel" runat="server">
@@ -129,9 +135,10 @@
                        </asp:Table>
                        </div>
                       </form>
-                  
+                    </asp:Panel>
 
                    </div>
+          
               
 
                </div>

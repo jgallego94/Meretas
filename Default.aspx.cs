@@ -15,14 +15,6 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Surveys surveysbutt = new Surveys();
-        
-        //Needs a survey ID
-
-        //surveysbutt.GetSurvey();
-    }
 
     protected void Login_Click(object sender, EventArgs e)
     {
@@ -45,5 +37,16 @@ public partial class _Default : System.Web.UI.Page
                 Response.Redirect("Users/Main.aspx");
             }
         }
+    }
+
+    protected void startButton_Click(object sender, EventArgs e)
+    {
+        MeretasCodeHandler MCH = new MeretasCodeHandler();
+        Survey activeSurvey = new Survey();
+
+        //survey ID is hardcoded to 1 for now
+        activeSurvey = MCH.GetSurvey(1);
+
+        Response.Redirect("Questions/dynamicTest.aspx");
     }
 }

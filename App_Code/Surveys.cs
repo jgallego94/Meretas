@@ -12,9 +12,7 @@ public class Surveys
     public Survey LoadSurvey(int SurveyID)
     {
         Survey survey = new Survey();
-        List<Question> QuestionList = new List<Question>();
-        //List<string> ResponseList = new  
-
+        
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
 
@@ -40,11 +38,62 @@ public class Surveys
         {
             while(LoadReader.Read())
             {
+                Question newQuestion = new Question();
+                newQuestion.QuestionID = Convert.ToInt32(LoadReader["QuestionID"]);
+                newQuestion.QuestionText = LoadReader["QuestionText"].ToString();
+
+                List<Choice> questionChoices = new List<Choice>();
+                questionChoices = LoadChoices(newQuestion.QuestionID);
+
+                for (int i = 0; i < questionChoices.Count; i++)
+                {
+                    newQuestion.Choices.Add(questionChoices[i]);
+                }
                 
+                survey.Questions.Add(newQuestion);
             }
         }
 
         return survey;
+    }
+
+    public List<Choice> LoadChoices(int QuestionID)
+    {
+        List<Choice> Choices = new List<Choice>();
+
+        ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
+        SqlConnection meretas = new SqlConnection();
+
+        meretas.ConnectionString = WebSettings.ConnectionString;
+        meretas.Open();
+
+        SqlCommand LoadCommand = new SqlCommand();
+        LoadCommand.Connection = meretas;
+        LoadCommand.CommandType = CommandType.StoredProcedure;
+        LoadCommand.CommandText = "LoadChoices";
+
+        SqlParameter IDParameter = new SqlParameter();
+        IDParameter.ParameterName = "@QuestionID";
+        IDParameter.SqlDbType = SqlDbType.Int;
+        IDParameter.Direction = ParameterDirection.Input;
+
+        LoadCommand.Parameters.Add(IDParameter);
+
+        SqlDataReader ChoiceDataReader = LoadCommand.ExecuteReader();
+
+        if(ChoiceDataReader.HasRows)
+        {
+            while(ChoiceDataReader.Read())
+            {
+                Choice newChoice = new Choice();
+                newChoice.QuestionID = Convert.ToInt32(ChoiceDataReader["QuestionID"]);
+                newChoice.Description = ChoiceDataReader["ChoiceText"].ToString();
+
+                Choices.Add(newChoice);
+            }
+        }
+
+        return Choices;
     }
 
     public bool AddQuestion(int QuestionID, int SurveyID, string Description)

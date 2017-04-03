@@ -16,4 +16,10 @@ public class Survey
         get { return descriptionValue; }
         set { descriptionValue = value; }
     }
+
+    public List<Question> Questions
+    {
+        get { return QuestionList; }
+    }
+
 }

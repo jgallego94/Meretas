@@ -13,7 +13,7 @@ public class Surveys
     {
         Survey survey = new Survey();
         List<Question> QuestionList = new List<Question>();
-        List<string> ResponseList = new  
+        //List<string> ResponseList = new  
 
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();

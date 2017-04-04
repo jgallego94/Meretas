@@ -51,7 +51,6 @@
             <br>
             
             <div class="col-sm-12" id="MainContent">
-                     <asp:Panel ID="startPanel" runat="server" DefaultButton="startButton">
                        <form runat="server">
             <div class="Container" id="CenterContent">
                 
@@ -75,10 +74,8 @@
                 </div>
 
                </div>
-               
-               
-                   <div class="col-sm-4" id="LoginPane">
-                     
+                </div>
+                <div class="col-sm-4" id="LoginPane">
                            <div class="form-group">
 
                        <asp:Table ID="LoginTabel" runat="server">
@@ -95,6 +92,7 @@
                                        ControlToValidate = "Email"
                                        ValidationExpression ="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
                                        ErrorMessage="Please enter a valid e-mail"
+                                       validationgroup="login"
                                        style="color:red;">
 
                                    </asp:RegularExpressionValidator>
@@ -118,6 +116,7 @@
                                        ErrorMessage="Please enter a password"
                                        ControlToValidate="Password"
                                        Display="Dynamic"
+                                       validationgroup="login"
                                        style="color:red">
 
                                    </asp:RequiredFieldValidator><br />
@@ -128,34 +127,30 @@
                                    <span> </span>
                                </asp:TableCell>
                                <asp:TableCell>
-                                   <asp:Button CssClass="btn btn-sm" id="loginButton" OnClick="Login_Click" Text="Login" runat="server" />
+                                   <asp:Button CssClass="btn btn-sm" id="loginButton" OnClick="Login_Click" Text="Login" validationgroup="login" runat="server" />
                                </asp:TableCell>
                               
                            </asp:TableRow>
                        </asp:Table>
                        </div>
+                    </div>
                       </form>
-                    </asp:Panel>
-
+             
+                
                    </div>
           
               
 
                </div>
-
-            </div>
-
+                
            
-               
-            </div>
-
-            
-            
+     
 
         <div class="col-sm-12"id="footer">
             
         </div>
-       </div> 
+     
+
        
 </body>
 </html>

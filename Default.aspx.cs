@@ -41,12 +41,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void startButton_Click(object sender, EventArgs e)
     {
-        MeretasCodeHandler MCH = new MeretasCodeHandler();
-        Survey activeSurvey = new Survey();
-
-        //survey ID is hardcoded to 1 for now
-        activeSurvey = MCH.GetSurvey(1);
-
+        Application["SurveyID"] = 1;
         Response.Redirect("Questions/dynamicTest.aspx");
     }
 }

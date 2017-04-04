@@ -37,7 +37,7 @@
                  </div>
              </nav>
              <br /><br />
-             <form id="QuestionForm">
+             <form id="QuestionForm" runat="server">
                  <div id="formCarousel" style="border-radius:25px;" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                      <div class="carousel-inner">
 

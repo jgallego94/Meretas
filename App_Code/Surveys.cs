@@ -74,6 +74,7 @@ public class Surveys
 
         SqlParameter IDParameter = new SqlParameter();
         IDParameter.ParameterName = "@QuestionID";
+        IDParameter.Value = QuestionID;
         IDParameter.SqlDbType = SqlDbType.Int;
         IDParameter.Direction = ParameterDirection.Input;
 

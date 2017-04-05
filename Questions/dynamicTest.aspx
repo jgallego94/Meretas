@@ -40,14 +40,17 @@
              <form id="QuestionForm" runat="server">
                  <div id="formCarousel" style="border-radius:25px;" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                      <div class="carousel-inner">
+                         <div runat="server" class="col-sm-12" id="dynamicSurvey">
 
-                         <div class="item active">
+                         <%--<div class="item active">
                              <div class="col-sm-2">
 
                              </div>
                              <div class="col-sm-8" id="Question">
+                                 <br />
+                                 <hr class="style-eight" />
 
-                                  <h2><asp:TextBox ID="QuestionText" runat="server"></asp:TextBox></h2>     
+                                  <h2><asp:Label ID="QuestionText" runat="server" CssClass="QuestionText"></asp:Label></h2>     
                                                         
                                  <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
 
@@ -55,9 +58,9 @@
                              <div class="col-sm-2">
 
                              </div>
+                         </div>--%>
                          </div>
-
-                         <div class="item">
+                         <%--<div class="item">
                              <div class="col-sm-2">
 
                              </div>
@@ -84,7 +87,7 @@
                              <div class="col-sm-2">
 
                              </div>
-                         </div>
+                         </div>--%>
 
                          
 

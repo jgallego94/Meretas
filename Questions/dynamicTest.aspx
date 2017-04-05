@@ -39,8 +39,8 @@
              <br /><br />
              <form id="QuestionForm" runat="server">
                  <div id="formCarousel" style="border-radius:25px;" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
-                     <div class="carousel-inner">
-                         <div runat="server" class="col-sm-12" id="dynamicSurvey">
+                     <div class="carousel-inner col-sm-12" runat="server" id="dynamicSurvey">
+
 
                          <%--<div class="item active">
                              <div class="col-sm-2">
@@ -59,7 +59,7 @@
 
                              </div>
                          </div>--%>
-                         </div>
+           
                          <%--<div class="item">
                              <div class="col-sm-2">
 

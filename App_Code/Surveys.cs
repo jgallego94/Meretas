@@ -22,7 +22,7 @@ public class Surveys
         SqlCommand LoadCommand = new SqlCommand();
         LoadCommand.Connection = meretas;
         LoadCommand.CommandType = CommandType.StoredProcedure;
-        LoadCommand.CommandText = "LoadSurvey";
+        LoadCommand.CommandText = "LoadQuestions";
 
         SqlParameter SurveyIDParameter = new SqlParameter();
         SurveyIDParameter.ParameterName = "@SurveyID";
@@ -48,8 +48,9 @@ public class Surveys
                 for (int i = 0; i < questionChoices.Count; i++)
                 {
                     newQuestion.Choices.Add(questionChoices[i]);
+                   
                 }
-                
+
                 survey.Questions.Add(newQuestion);
             }
         }
@@ -87,7 +88,7 @@ public class Surveys
             while(ChoiceDataReader.Read())
             {
                 Choice newChoice = new Choice();
-                newChoice.QuestionID = Convert.ToInt32(ChoiceDataReader["QuestionID"]);
+                newChoice.ChoiceID = Convert.ToInt32(ChoiceDataReader["QuestionID"]);
                 newChoice.Description = ChoiceDataReader["ChoiceText"].ToString();
 
                 Choices.Add(newChoice);

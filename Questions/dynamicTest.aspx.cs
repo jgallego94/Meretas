@@ -33,7 +33,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
             carouselBuilder.Append("<div class=\"col-sm-8\" id=\"Question\">");
             carouselBuilder.Append("<br><hr class=\"style-eight\">");
             carouselBuilder.Append("<h2>");
-            carouselBuilder.Append(activeSurvey.Questions[1].QuestionText);
+            carouselBuilder.Append(activeSurvey.Questions[0].QuestionText);
             carouselBuilder.Append("<h2>");
             carouselBuilder.Append("<a href = \"#formCarousel\" role=\"button\" class= \"btn btn-lg\" id=\"nextButton\" data-slide=\"next\">Next</a>");
 
@@ -51,7 +51,18 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                     carouselBuilder.Append("<br><hr class=\"style-eight\">");
                     carouselBuilder.Append("<h2>");
                     carouselBuilder.Append(testQuestionText);
-                    carouselBuilder.Append("<h2>");
+                    carouselBuilder.Append("</h2>");
+                    carouselBuilder.Append("<div class=\"radio\"><br>");
+
+                    for (int j = 0; j < activeSurvey.Questions[i].Choices.Count(); j++)
+                        {
+                             carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[i].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[i].QuestionID + " value=" + activeSurvey.Questions[i].Choices[j].ChoiceID + "/>");
+                             carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[j].Description + "> " + activeSurvey.Questions[i].Choices[j].Description + "</label><br><br><br>");
+                            
+                        }    
+
+                    
+                    carouselBuilder.Append("<input type=\"radio\" id=");
                     carouselBuilder.Append("<a href = \"#formCarousel\" role=\"button\" class= \"btn btn-lg\" id=\"nextButton\" data-slide=\"next\">Next</a>");
 
                     carouselBuilder.Append("</div>");

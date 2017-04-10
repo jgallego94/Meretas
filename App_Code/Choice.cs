@@ -8,13 +8,13 @@ using System.Web;
 /// </summary>
 public class Choice
 {
-    private int QuestionIDValue;
+    private int ChoiceIDValue;
     private string DescriptionValue;
 
-    public int QuestionID
+    public int ChoiceID
     {
-        get { return QuestionIDValue; }
-        set { QuestionIDValue = value; }
+        get { return ChoiceIDValue; }
+        set { ChoiceIDValue = value; }
     }
 
     public string Description

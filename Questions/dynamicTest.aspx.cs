@@ -36,17 +36,19 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
             carouselBuilder.Append(activeSurvey.Questions[0].QuestionText);
             carouselBuilder.Append("</h2>");
             carouselBuilder.Append("<div class=\"radio\"><br>");
+            carouselBuilder.Append("<input type=\"radio\"  id=" + activeSurvey.Questions[0].Choices[0].Description + " name=" + activeSurvey.Questions[0].QuestionID + " value=" + activeSurvey.Questions[0].Choices[0].ChoiceID + " checked = \"checked\" />");
+            carouselBuilder.Append("<label for=" + activeSurvey.Questions[0].Choices[0].Description + " name=\"q\" "  + activeSurvey.Questions[0].Choices[0].ChoiceID + ">" + activeSurvey.Questions[0].Choices[0].Description + "</label><br><br><br>");
 
-            for (int j = 0; j < activeSurvey.Questions[0].Choices.Count(); j++)
+            for (int j = 1; j < activeSurvey.Questions[0].Choices.Count(); j++)
             {
-                carouselBuilder.Append("<input type=\"radio\"  id=" + activeSurvey.Questions[0].Choices[j].Description + " onclick=\"check()\" name=\"q\" value=" + activeSurvey.Questions[0].Choices[j].ChoiceID + "/>");
-                carouselBuilder.Append("<label for=" + activeSurvey.Questions[0].Choices[j].Description + " onclick=\"check()\"  name=\"q\"> " + activeSurvey.Questions[0].Choices[j].Description + "</label><br><br><br>");
+                carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[0].Choices[j].Description + " name=" + activeSurvey.Questions[0].QuestionID + ">");
+                carouselBuilder.Append("<label for=" + activeSurvey.Questions[0].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[0].Choices[j].Description + "> " + activeSurvey.Questions[0].Choices[j].Description + "</label><br><br><br>");
 
             }
 
             carouselBuilder.Append("</div>"); //!Radio
 
-            carouselBuilder.Append("<a href = \"#formCarousel\" role=\"button\" class= \"btn btn-lg\" id=\"nextButton\" data-slide=\"next\" style=\"visibility:hidden;\" >Next</a>");
+            carouselBuilder.Append("<a href = \"#formCarousel\" role=\"button\" class= \"btn btn-lg\" id=\"nextButton\" data-slide=\"next\">Next</a>");
 
            
             carouselBuilder.Append("</div>"); 
@@ -58,22 +60,24 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
                     carouselBuilder.Append("<div class=\"item\">");
                     carouselBuilder.Append("<div class=\"col-sm-2\">");
-                    carouselBuilder.Append("</div>");
+                carouselBuilder.Append("</div>");
                     carouselBuilder.Append("<div class=\"col-sm-8\" id=\"Question\">");
                     carouselBuilder.Append("<br><hr class=\"style-eight\">");
                     carouselBuilder.Append("<h2>");
                     carouselBuilder.Append(testQuestionText);
                     carouselBuilder.Append("</h2>");
                     carouselBuilder.Append("<div class=\"radio\"><br>");
+                carouselBuilder.Append("<input type=\"radio\"  id=" + activeSurvey.Questions[i].Choices[0].Description + " name=" + activeSurvey.Questions[i].QuestionID + " value=" + activeSurvey.Questions[i].Choices[0].ChoiceID + " checked = \"checked\" />");
+                carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[0].Description + " name=\"q\" " + activeSurvey.Questions[i].Choices[0].ChoiceID + ">" + activeSurvey.Questions[i].Choices[0].Description + "</label><br><br><br>");
 
-                    for (int j = 0; j < activeSurvey.Questions[i].Choices.Count(); j++)
-                        {
-                             carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[i].Choices[j].Description + " name=\"q\" value=" + activeSurvey.Questions[i].Choices[j].ChoiceID + "/>");
-                             carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[j].Description + "> " + activeSurvey.Questions[i].Choices[j].Description + "</label><br><br><br>");
-                            
-                        }    
+                for (int j = 1; j < activeSurvey.Questions[i].Choices.Count(); j++)
+                {
+                    carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[i].Choices[j].Description + " name=" + activeSurvey.Questions[i].QuestionID + ">");
+                    carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[i].Choices[j].Description + "> " + activeSurvey.Questions[i].Choices[j].Description + "</label><br><br><br>");
 
-                   
+                }
+
+
 
                 carouselBuilder.Append("</div>");
 

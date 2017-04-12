@@ -13,24 +13,6 @@
   
     <script>
         
-        function check()
-        {
-            var ele = document.getElementsByName("q");
-            var flag = 0;
-
-            for(var i = 0; i < ele.length; i++)
-            {
-                if(ele[i].checked)
-                {
-                    flag = 1;
-                }
-            }
-
-            if(flag == 1)
-            {
-                document.getElementById('nextButton').style.visiblity = 'visible';
-            }
-        }
 
     </script>
 

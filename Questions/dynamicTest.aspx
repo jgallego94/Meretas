@@ -11,8 +11,26 @@
     <link rel="stylesheet" type="text/css" href="../Style/SimpleStyle.css"/>
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Open+Sans+Condensed:300" rel="stylesheet"/>
   
-    <script type="text/javascript">
+    <script>
+        
+        function check()
+        {
+            var ele = document.getElementsByName("q");
+            var flag = 0;
 
+            for(var i = 0; i < ele.length; i++)
+            {
+                if(ele[i].checked)
+                {
+                    flag = 1;
+                }
+            }
+
+            if(flag == 1)
+            {
+                document.getElementById('nextButton').style.visiblity = 'visible';
+            }
+        }
 
     </script>
 
@@ -40,59 +58,7 @@
              <form id="QuestionForm" runat="server">
                  <div id="formCarousel" style="border-radius:25px;" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                      <div class="carousel-inner col-sm-12" runat="server" id="dynamicSurvey">
-
-
-                         <%--<div class="item active">
-                             <div class="col-sm-2">
-
-                             </div>
-                             <div class="col-sm-8" id="Question">
-                                 <br />
-                                 <hr class="style-eight" />
-
-                                  <h2><asp:Label ID="QuestionText" runat="server" CssClass="QuestionText"></asp:Label></h2>     
-                                                        
-                                 <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
-
-                             </div>
-                             <div class="col-sm-2">
-
-                             </div>
-                         </div>--%>
-           
-                         <%--<div class="item">
-                             <div class="col-sm-2">
-
-                             </div>
-                             <div class="col-sm-8" id="Question">
-                                 <br />
-                                 <hr class="style-eight" />
-                                 <h2>What is your current employment status?</h2>
-
-                                 <div class="radio">
-                                     <br />
-                                     <input id="FullTime" type="radio" name="q2" value="1" />
-                                     <label for="FullTime">Full Time</label><br />
-                                     <br />
-                                     <input id="SelfEmployed" type="radio" name="q2" value="2" />
-                                     <label for="SelfEmployed">Self Employed</label><br />
-                                     <br />
-                                     <input id="Student" type="radio" name="q2" value="3" />
-                                     <label for="Student">Student</label><br />
-
-                                       
-                                </div>
-                                 <a href="#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
-                             </div>
-                             <div class="col-sm-2">
-
-                             </div>
-                         </div>--%>
-
-                         
-
-
-                        
+                                   
                      </div>
 
                  </div>

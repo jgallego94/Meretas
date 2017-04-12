@@ -88,7 +88,7 @@ public class Surveys
             while(ChoiceDataReader.Read())
             {
                 Choice newChoice = new Choice();
-                newChoice.ChoiceID = Convert.ToInt32(ChoiceDataReader["QuestionID"]);
+                newChoice.ChoiceID = Convert.ToInt32(ChoiceDataReader["ChoiceID"]);
                 newChoice.Description = ChoiceDataReader["ChoiceText"].ToString();
 
                 Choices.Add(newChoice);

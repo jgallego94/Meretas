@@ -424,10 +424,7 @@ public class Surveys
                 meretas.Close();
             }
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
         return success;
     }
 }

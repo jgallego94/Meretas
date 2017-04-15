@@ -20,7 +20,7 @@ public class Surveys
         meretas.Open();
 
         SqlCommand LoadCommand = new SqlCommand();
-        LoadCommand.Connection = meretas;
+        LoadCommand.Connection = meretas; 
         LoadCommand.CommandType = CommandType.StoredProcedure;
         LoadCommand.CommandText = "LoadQuestions";
 
@@ -276,78 +276,77 @@ public class Surveys
         return Success;
         
     }
-
-    //not sure if the dates will work, google said use DateTime, so I put that!
-    public bool ProcessSurvey(int VisitorID, int SurveyID, int QuestionID, int ResponseID, DateTime DateSubmitted, DateTime TimeSubmitted, int ResponseInstanceID)
+    
+    public int SubmitSurvey(int surveyID, int memberID, string dateSubmitted, string timeSubmitted)
     {
-        bool Success = false;
-
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
-
         meretas.ConnectionString = WebSettings.ConnectionString;
-        meretas.Open();
 
-        SqlCommand ProcessCommand = new SqlCommand();
-        ProcessCommand.Connection = meretas;
-        ProcessCommand.CommandType = CommandType.StoredProcedure;
-        ProcessCommand.CommandText = "ProcessSurvey";
+        int surveyResponseID = 0;
 
-        SqlParameter VisitorIDParameter = new SqlParameter();
-        VisitorIDParameter.ParameterName = "@VisitorID";
-        VisitorIDParameter.SqlDbType = SqlDbType.Int;
-        VisitorIDParameter.Value = VisitorID;
-        VisitorIDParameter.Direction = ParameterDirection.Input;
+        using (meretas)
+        {
+            try
+            {
+                meretas.Open();
 
-        SqlParameter SurveyIDParameter = new SqlParameter();
-        SurveyIDParameter.ParameterName = "@SurveryID";
-        SurveyIDParameter.SqlDbType = SqlDbType.Int;
-        SurveyIDParameter.Value = SurveyID;
-        SurveyIDParameter.Direction = ParameterDirection.Input;
+                SqlCommand SubmitCommand = new SqlCommand();
+                SubmitCommand.Connection = meretas;
+                SubmitCommand.CommandType = CommandType.StoredProcedure;
+                SubmitCommand.CommandText = "SubmitSurvey";
 
-        SqlParameter QuestionIDParameter = new SqlParameter();
-        QuestionIDParameter.ParameterName = "@QuestionID";
-        QuestionIDParameter.SqlDbType = SqlDbType.Int;
-        QuestionIDParameter.Value = QuestionID;
-        QuestionIDParameter.Direction = ParameterDirection.Input;
+                SqlParameter Parameter = new SqlParameter();
+                Parameter.ParameterName = "@SurveyID";
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = surveyID;
 
-        SqlParameter ResponseIDParameter = new SqlParameter();
-        ResponseIDParameter.ParameterName = "@ResponseID";
-        ResponseIDParameter.SqlDbType = SqlDbType.Int;
-        ResponseIDParameter.Value = ResponseID;
-        ResponseIDParameter.Direction = ParameterDirection.Input;
+                SubmitCommand.Parameters.Add(Parameter);
 
-        SqlParameter DateSubmittedParameter = new SqlParameter();
-        DateSubmittedParameter.ParameterName = "@DateSubmitted";
-        DateSubmittedParameter.SqlDbType = SqlDbType.DateTime;
-        DateSubmittedParameter.Value = DateSubmitted;
-        DateSubmittedParameter.Direction = ParameterDirection.Input;
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@MemberID";
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = memberID;
 
-        SqlParameter TimeSubmittedParameter = new SqlParameter();
-        TimeSubmittedParameter.ParameterName = "@TimeSubmitted";
-        TimeSubmittedParameter.SqlDbType = SqlDbType.DateTime;
-        TimeSubmittedParameter.Value = TimeSubmitted;
-        TimeSubmittedParameter.Direction = ParameterDirection.Input;
+                SubmitCommand.Parameters.Add(Parameter);
 
-        SqlParameter ResponseInstanceIDParameter = new SqlParameter();
-        ResponseInstanceIDParameter.ParameterName = "@ResponseInstanceID";
-        ResponseInstanceIDParameter.SqlDbType = SqlDbType.Int;
-        ResponseInstanceIDParameter.Value = ResponseInstanceID;
-        ResponseInstanceIDParameter.Direction = ParameterDirection.Input;
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@DateSubmitted";
+                Parameter.SqlDbType = SqlDbType.Date;
+                Parameter.Value = dateSubmitted;
 
-        ProcessCommand.Parameters.Add(VisitorIDParameter);
-        ProcessCommand.Parameters.Add(SurveyIDParameter);
-        ProcessCommand.Parameters.Add(ResponseIDParameter);
-        ProcessCommand.Parameters.Add(DateSubmittedParameter);
-        ProcessCommand.Parameters.Add(TimeSubmittedParameter);
-        ProcessCommand.Parameters.Add(ResponseInstanceIDParameter);
+                SubmitCommand.Parameters.Add(Parameter);
 
-        ProcessCommand.ExecuteNonQuery();
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@TimeSubmitted";
+                Parameter.SqlDbType = SqlDbType.Time;
+                Parameter.Value = timeSubmitted;
 
-        Success = true;
+                SubmitCommand.Parameters.Add(Parameter);
 
-        meretas.Close();
-
-        return Success;
+                using (SqlDataReader reader = SubmitCommand.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        if(reader.HasRows)
+                        {
+                            surveyResponseID = Convert.ToInt32(reader[0].ToString());
+                        }
+                    }
+                }
+                 
+            }
+            catch(Exception e)
+            {
+                throw new Exception("SubmitSurvey: " + e.Message);
+            }
+            finally
+            {
+                meretas.Close();
+            }
+        }
+        return surveyResponseID;
     }
 }

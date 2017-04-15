@@ -11,6 +11,11 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (IsPostBack)
+        {
+            Response.Write("yaaaaay");
+        }
+
         if(Application["SurveyID"] == null)
         {
             Response.Redirect("../Default.aspx");

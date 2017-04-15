@@ -341,7 +341,6 @@ public class Surveys
                         }
                     }
                 }
-                 
             }
             catch(Exception e)
             {
@@ -384,7 +383,37 @@ public class Surveys
 
                 Parameter = new SqlParameter();
                 Parameter.ParameterName = "@SurveyID";
-                Parameter.SqlDbType = SqlDbType.
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = surveyID;
+
+                SubmitCommand.Parameters.Add(Parameter);
+
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@QuestionID";
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = questionID;
+
+                SubmitCommand.Parameters.Add(Parameter);
+
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@ChoiceID";
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = choiceID;
+
+                SubmitCommand.Parameters.Add(Parameter);
+
+                using (SqlDataReader reader = SubmitCommand.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        if (reader.HasRows)
+                            success = true;
+                    }
+
+                }
             }
             catch(Exception e)
             {
@@ -395,7 +424,10 @@ public class Surveys
                 meretas.Close();
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         return success;
     }
 }

@@ -60,15 +60,15 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
                     carouselBuilder.Append("<div class=\"item\">");
                     carouselBuilder.Append("<div class=\"col-sm-2\">");
-                carouselBuilder.Append("</div>");
+                    carouselBuilder.Append("</div>");
                     carouselBuilder.Append("<div class=\"col-sm-8\" id=\"Question\">");
                     carouselBuilder.Append("<br><hr class=\"style-eight\">");
                     carouselBuilder.Append("<h2>");
                     carouselBuilder.Append(testQuestionText);
                     carouselBuilder.Append("</h2>");
                     carouselBuilder.Append("<div class=\"radio\"><br>");
-                carouselBuilder.Append("<input type=\"radio\"  id=" + activeSurvey.Questions[i].Choices[0].Description + " name=" + activeSurvey.Questions[i].QuestionID + " value=" + activeSurvey.Questions[i].Choices[0].ChoiceID + " checked = \"checked\" />");
-                carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[0].Description + " name=\"q\" " + activeSurvey.Questions[i].Choices[0].ChoiceID + ">" + activeSurvey.Questions[i].Choices[0].Description + "</label><br><br><br>");
+                    carouselBuilder.Append("<input type=\"radio\"  id=" + activeSurvey.Questions[i].Choices[0].Description + " name=" + activeSurvey.Questions[i].QuestionID + " value=" + activeSurvey.Questions[i].Choices[0].ChoiceID + " checked = \"checked\" />");
+                    carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[0].Description + " name=\"q\" " + activeSurvey.Questions[i].Choices[0].ChoiceID + ">" + activeSurvey.Questions[i].Choices[0].Description + "</label><br><br><br>");
 
                 for (int j = 1; j < activeSurvey.Questions[i].Choices.Count(); j++)
                 {
@@ -83,12 +83,12 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
                 if(activeSurvey.Questions[i].Equals(activeSurvey.Questions.Last()))
                 {
-                    //<a href="../Results/CreditCardResults.aspx" role="button" class="btn btn-lg" id="nextButton">Get Results</a>
-                    carouselBuilder.Append("<a href = \"../Results/CreditCardResults.aspx\" role=\"button\" class=\"btn btn-lg\" id=\"nextButton\">Get Results</a>");
+                    carouselBuilder.Append("<input type=\"submit\" id=\"nextButton\" class=\"btn btn-lg\" value=\"Get Results\">");
                 }
                 else
                 {
                     carouselBuilder.Append("<a href = \"#formCarousel\" role=\"button\" class= \"btn btn-lg\" id=\"nextButton\" data-slide=\"next\">Next</a>");
+                  
                 }            
                 carouselBuilder.Append("</div>");
             
@@ -96,29 +96,11 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
             string carouselString = carouselBuilder.ToString();
             dynamicSurvey.InnerHtml = carouselString;
-
-
-            //QuestionText.Text = testQuestionText;
-            //<% --< div class="item active">
-            //                 <div class="col-sm-2">
-
-            //                 </div>
-            //                 <div class="col-sm-8" id="Question">
-            //                     <br />
-            //                     <hr class="style-eight" />
-
-            //                      <h2><asp:Label ID = "QuestionText" runat="server" CssClass="QuestionText"></asp:Label></h2>     
-
-            //                     <a href = "#formCarousel" role="button" class="btn btn-lg" id="nextButton" data-slide="next">Next</a>
-
-            //                 </div>
-            //                 <div class="col-sm-2">
-
-            //                 </div>
-            //             </div>--%>
-
-
         }
          
     }
+
+  
+
+
 }

@@ -37,13 +37,12 @@
                  </div>
              </nav>
              <br /><br />
-             <form id="QuestionForm" runat="server">
+             <form id="QuestionForm" runat="server" method="post">
                  <div id="formCarousel" style="border-radius:25px;" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                      <div class="carousel-inner col-sm-12" runat="server" id="dynamicSurvey">
                                    
                      </div>
-
-                 </div>
+                      </div>
               </form>
 
              </div>         

@@ -431,4 +431,76 @@ public class Surveys
 
         return success;
     }
+
+    public List<Choice> GetUserResponse(int surveyID, int questionID, int choiceID)
+    {
+        ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
+        SqlConnection meretas = new SqlConnection();
+        meretas.ConnectionString = WebSettings.ConnectionString;
+
+        List<Choice> choices = new List<Choice>();
+        Choice choice;
+
+        using (meretas)
+        {
+            try
+            {
+                meretas.Open();
+
+                SqlCommand GetCommand = new SqlCommand();
+                GetCommand.Connection = meretas;
+                GetCommand.CommandType = CommandType.StoredProcedure;
+                GetCommand.CommandText = "GetUserResponse";
+
+                SqlParameter AddParameter = new SqlParameter();
+                AddParameter.ParameterName = "@SurveyID";
+                AddParameter.SqlDbType = SqlDbType.Int;
+                AddParameter.Direction = ParameterDirection.Input;
+                AddParameter.Value = surveyID;
+
+                GetCommand.Parameters.Add(AddParameter);
+
+                AddParameter = new SqlParameter();
+                AddParameter.ParameterName = "@QuestionID";
+                AddParameter.SqlDbType = SqlDbType.Int;
+                AddParameter.Direction = ParameterDirection.Input;
+                AddParameter.Value = questionID;
+
+                GetCommand.Parameters.Add(AddParameter);
+
+                AddParameter = new SqlParameter();
+                AddParameter.ParameterName = "@ChoiceID";
+                AddParameter.SqlDbType = SqlDbType.Int;
+                AddParameter.Direction = ParameterDirection.Input;
+                AddParameter.Value = choiceID;
+
+                GetCommand.Parameters.Add(AddParameter);
+
+                using (SqlDataReader reader = GetCommand.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        if(reader.HasRows)
+                        {
+                            choice = new Choice();
+
+                            choice.ChoiceID = Convert.ToInt32(reader["ChoiceID"].ToString());
+                            choice.Description = reader["Choice Text"].ToString();
+
+                            choices.Add(choice);
+                        }
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                throw new Exception("GetUserResponse error: " + e.Message);
+            }
+            finally
+            {
+                meretas.Close();
+            }
+        }
+        return choices;
+    }
 }

@@ -326,13 +326,18 @@ public class Surveys
 
                 SubmitCommand.Parameters.Add(Parameter);
 
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@SurveyResponseID";
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Output;
+
                 using (SqlDataReader reader = SubmitCommand.ExecuteReader())
                 {
                     while(reader.Read())
                     {
                         if(reader.HasRows)
                         {
-                            surveyResponseID = Convert.ToInt32(reader[0].ToString());
+                            surveyResponseID = Convert.ToInt32(Parameter.Value.ToString());
                         }
                     }
                 }
@@ -340,7 +345,7 @@ public class Surveys
             }
             catch(Exception e)
             {
-                throw new Exception("SubmitSurvey: " + e.Message);
+                throw new Exception("SubmitSurvey error: " + e.Message);
             }
             finally
             {
@@ -348,5 +353,47 @@ public class Surveys
             }
         }
         return surveyResponseID;
+    }
+
+    public bool RecordUserResponse(int surveyResponseID, int surveyID, int questionID, int choiceID)
+    {
+        ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
+        SqlConnection meretas = new SqlConnection();
+        meretas.ConnectionString = WebSettings.ConnectionString;
+
+        bool success = false;
+
+        using (meretas)
+        {
+            try
+            {
+                meretas.Open();
+
+                SqlCommand SubmitCommand = new SqlCommand();
+                SubmitCommand.Connection = meretas;
+                SubmitCommand.CommandType = CommandType.StoredProcedure;
+                SubmitCommand.CommandText = "RecordUserResponse";
+
+                SqlParameter Parameter = new SqlParameter();
+                Parameter.ParameterName = "@SurveyResponseID";
+                Parameter.SqlDbType = SqlDbType.Int;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = surveyResponseID;
+
+                SubmitCommand.Parameters.Add(Parameter);
+
+                Parameter = new SqlParameter();
+                Parameter.ParameterName = "@SurveyID";
+                Parameter.SqlDbType = SqlDbType.
+            }
+            catch(Exception e)
+            {
+                throw new Exception("RecordUserResponse error: " + e.Message);
+            }
+            finally
+            {
+                meretas.Close();
+            }
+        }
     }
 }

@@ -62,13 +62,15 @@ public class MeretasCodeHandler
        return Confirmation;
    }
 
-   public bool ProcessSurvey(int VisitorID, int SurveyID, int QuestionID, int ResponseID, DateTime DateSubmitted, DateTime TimeSubmitted, int ResponseInstanceID)
+   public int ProcessSurvey(int VisitorID, int SurveyID, string DateSubmitted, string TimeSubmitted)
    {
-       bool Confirmation;
+       int SurveyResponseID;
        Surveys SurveyManager = new Surveys();
 
-        Confirmation = SurveyManager.ProcessSurvey(VisitorID, SurveyID, QuestionID, ResponseID, DateSubmitted, TimeSubmitted, ResponseInstanceID);
+        //int surveyID, int memberID, string dateSubmitted, string timeSubmitted
+        SurveyResponseID = SurveyManager.SubmitSurvey(SurveyID, VisitorID, DateSubmitted, TimeSubmitted);
 
-       return Confirmation;
+
+        return SurveyResponseID;
    }
 }

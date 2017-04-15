@@ -11,11 +11,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack)
-        {
-            Response.Write("yaaaaay");
-        }
-
+       
         if(Application["SurveyID"] == null)
         {
             Response.Redirect("../Default.aspx");
@@ -26,11 +22,15 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
             StringWriter sw = new StringWriter();          
             Survey activeSurvey = new Survey();
             StringBuilder carouselBuilder = new StringBuilder();
-            
 
             //survey ID is hardcoded to 1 for now
             activeSurvey = MCH.GetSurvey(Convert.ToInt32(Application["SurveyID"]));
 
+            if (IsPostBack)
+            {
+                
+                Response.Write(MCH.ProcessSurvey(1, Convert.ToInt32(Application["SurveyID"]), "01/01/2017", "12:12 AM"));
+            }
 
             carouselBuilder.Append("<div class=\"item active\">");
             carouselBuilder.Append("<div class=\"col-sm-2\">");

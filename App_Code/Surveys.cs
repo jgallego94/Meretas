@@ -395,5 +395,7 @@ public class Surveys
                 meretas.Close();
             }
         }
+
+        return success;
     }
 }

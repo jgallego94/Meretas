@@ -28,8 +28,8 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
             if (IsPostBack)
             {
-                
-                Response.Write(MCH.ProcessSurvey(1, Convert.ToInt32(Application["SurveyID"]), "01/01/2017", "12:12 AM"));
+                string time = "12:12 AM";
+                Response.Write(MCH.ProcessSurvey(1, Convert.ToInt32(Application["SurveyID"]), "01/01/2017", time));
             }
 
             carouselBuilder.Append("<div class=\"item active\">");

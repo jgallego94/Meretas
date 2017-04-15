@@ -315,6 +315,7 @@ public class Surveys
                 Parameter = new SqlParameter();
                 Parameter.ParameterName = "@DateSubmitted";
                 Parameter.SqlDbType = SqlDbType.Date;
+                Parameter.Direction = ParameterDirection.Input;
                 Parameter.Value = dateSubmitted;
 
                 SubmitCommand.Parameters.Add(Parameter);
@@ -322,7 +323,8 @@ public class Surveys
                 Parameter = new SqlParameter();
                 Parameter.ParameterName = "@TimeSubmitted";
                 Parameter.SqlDbType = SqlDbType.Time;
-                Parameter.Value = timeSubmitted;
+                Parameter.Direction = ParameterDirection.Input;
+                Parameter.Value = "12:25";
 
                 SubmitCommand.Parameters.Add(Parameter);
 
@@ -331,13 +333,15 @@ public class Surveys
                 Parameter.SqlDbType = SqlDbType.Int;
                 Parameter.Direction = ParameterDirection.Output;
 
+                SubmitCommand.Parameters.Add(Parameter);
+
                 using (SqlDataReader reader = SubmitCommand.ExecuteReader())
                 {
                     while(reader.Read())
                     {
                         if(reader.HasRows)
                         {
-                            surveyResponseID = Convert.ToInt32(Parameter.Value.ToString());
+                            surveyResponseID = Convert.ToInt32(reader[0].ToString());
                         }
                     }
                 }

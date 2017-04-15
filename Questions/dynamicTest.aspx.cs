@@ -29,7 +29,23 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
             if (IsPostBack)
             {
                 string time = "12:12 AM";
-                Response.Write(MCH.ProcessSurvey(1, Convert.ToInt32(Application["SurveyID"]), "01/01/2017", time));
+                int SRI = MCH.ProcessSurvey(1, Convert.ToInt32(Application["SurveyID"]), "01/01/2017", time);
+                List<int> ResponseList = new List<int>();
+
+                //populate user choices list
+                for (int i = 0; i< activeSurvey.Questions.Count(); i++)
+                {                 
+                    ResponseList.Add(Convert.ToInt32(Request.Form[activeSurvey.Questions[i].QuestionID]));         
+                }
+
+                //submit list to database
+               for (int j = 0; j< ResponseList.Count(); j++)
+                {
+                    MCH.RecordUserResponse(SRI, 1, activeSurvey.Questions[j].QuestionID, ResponseList[j]);
+                }
+                
+                
+                           
             }
 
             carouselBuilder.Append("<div class=\"item active\">");

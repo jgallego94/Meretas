@@ -67,10 +67,20 @@ public class MeretasCodeHandler
        int SurveyResponseID;
        Surveys SurveyManager = new Surveys();
 
-        //int surveyID, int memberID, string dateSubmitted, string timeSubmitted
         SurveyResponseID = SurveyManager.SubmitSurvey(SurveyID, VisitorID, DateSubmitted, TimeSubmitted);
 
 
         return SurveyResponseID;
    }
+
+    //(int surveyResponseID, int surveyID, int questionID, int choiceID
+    public bool RecordUserResponse(int surveyResponseID, int surveyID, int questionID, int choiceID)
+    {
+        bool confirmation;
+        Surveys SurveyManager = new Surveys();
+
+        confirmation = SurveyManager.RecordUserResponse(surveyResponseID, surveyID, questionID, choiceID);
+
+        return confirmation;
+    }
 }

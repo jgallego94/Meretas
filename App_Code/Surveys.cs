@@ -416,7 +416,6 @@ public class Surveys
                         if (reader.HasRows)
                             success = true;
                     }
-
                 }
             }
             catch(Exception e)

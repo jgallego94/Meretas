@@ -42,6 +42,6 @@ public partial class _Default : System.Web.UI.Page
     protected void startButton_Click(object sender, EventArgs e)
     {
         Application["SurveyID"] = 1;
-        Response.Redirect("Questions/dynamicTest.aspx");
+        Response.Redirect("Questions/dynamicQuestions.aspx");
     }
 }

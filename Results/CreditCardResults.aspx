@@ -10,22 +10,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../Style/SimpleStyle.css"/>
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Open+Sans+Condensed:300" rel="stylesheet"/>
-  
-    <script type="text/javascript">
-        
-        /* Reference for innerHTML
-   
-        function load_newTestCase()
-            {
-
-                document.getElementById("main").innerHTML =
-                        '<object type="text/html" data="newTestCasePage.jsp"\n\
-                    style="width:100%; height:100%;"></object>';
-
-            }
-    }); */
-
-    </script>
 </head>
 <body>
     <div class="row-content">
@@ -55,57 +39,7 @@
                  <br />
                  <hr class="style-eight" />
                  
-                 <table class="table">
-                     <thead>
-                         <th>
-                             Card 1
-                         </th>
-                         <th>
-                             Card 2
-                         </th>
-                     </thead>
-                     <tr>
-                         <td>TD Cash Back MasterCard Credit Card</td>
-                        
-                         <td>TD Emerald Visa Card</td>
-                     </tr>
-                     <tr>
-                         <td>
-                             <img src="https://www.tdcanadatrust.com/images/ccr2/ccr2-cash-back-card.jpg" />
-                         </td>
-                     
-                         <td>
-                             <img src="https://www.tdcanadatrust.com/images/ccr2/ccr2-emerald-card.jpg" />
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>
-                             <a href="https://www.tdcanadatrust.com/products-services/banking/credit-cards/view-all-cards/cashback-master-card.jsp">Apply Now</a>
-                         </td>
-                     
-                         <td>
-                             <a href="https://www.tdcanadatrust.com/products-services/banking/credit-cards/view-all-cards/emerald-card.jsp">Apply Now</a>
-                         </td>
-
-                     </tr>
-                     <tr>
-                         <td>
-                             Cash Back
-                         </td>
-                      
-                         <td>
-                             Keeping Balance
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>
-                             Interest = 19.99%
-                         </td>
-                         <td>
-                             Interest = 12.75%
-                         </td>
-                     </tr>
-                 </table>
+                
              </div>
              <div class="col-sm-2">
 

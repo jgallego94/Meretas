@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="dynamicTest.aspx.cs" Inherits="Questions_dynamicTest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="dynamicQuestions.aspx.cs" Inherits="Questions_dynamicTest" %>
 
 <!DOCTYPE html>
 

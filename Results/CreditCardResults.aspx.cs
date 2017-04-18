@@ -9,6 +9,8 @@ public partial class Results_CreditCardResults : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        MeretasCodeHandler MCH = new MeretasCodeHandler();
+        //List<CreditCard> = MCH.RecommendCard();
 
     }
 }

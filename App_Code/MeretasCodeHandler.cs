@@ -47,7 +47,7 @@ public class MeretasCodeHandler
        bool Confirmation = false;
        Surveys SurveyManager = new Surveys();
 
-        Confirmation = SurveyManager.AddSurvery(SurveyID, Description);
+        Confirmation = SurveyManager.AddSurvey(SurveyID, Description);
 
        return Confirmation;
    }
@@ -73,7 +73,6 @@ public class MeretasCodeHandler
         return SurveyResponseID;
    }
 
-    //(int surveyResponseID, int surveyID, int questionID, int choiceID
     public bool RecordUserResponse(int surveyResponseID, int surveyID, int questionID, int choiceID)
     {
         bool confirmation;
@@ -82,5 +81,18 @@ public class MeretasCodeHandler
         confirmation = SurveyManager.RecordUserResponse(surveyResponseID, surveyID, questionID, choiceID);
 
         return confirmation;
+    }
+
+
+    public Choice GetUserResponse(int surveyID, int questionID, int choiceID, int SRI)
+    {
+        Surveys SurveyManager = new Surveys();
+        return SurveyManager.GetUserResponse(surveyID, questionID, choiceID, SRI);
+    }
+
+    public List<CreditCard> RecommendCard(string type, string employmentStatus, string features, string balance, string discharged)
+    {
+        CreditCards CreditCardManager = new CreditCards();
+        return CreditCardManager.RecommendCreditCards(type, employmentStatus, features, balance, discharged);    
     }
 }

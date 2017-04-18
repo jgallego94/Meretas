@@ -198,7 +198,7 @@ public class Surveys
 
     }
 
-    public bool AddSurvery(int SurveyID, string Description)
+    public bool AddSurvey(int SurveyID, string Description)
     {
         bool Success = false;
 
@@ -432,14 +432,14 @@ public class Surveys
         return success;
     }
 
-    public List<Choice> GetUserResponse(int surveyID, int questionID, int choiceID)
+    public Choice GetUserResponse(int surveyID, int questionID, int choiceID, int SRI)
     {
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
         meretas.ConnectionString = WebSettings.ConnectionString;
 
-        List<Choice> choices = new List<Choice>();
         Choice choice;
+        choice = new Choice();
 
         using (meretas)
         {
@@ -476,18 +476,22 @@ public class Surveys
 
                 GetCommand.Parameters.Add(AddParameter);
 
+                AddParameter = new SqlParameter();
+                AddParameter.ParameterName = "@SurveyResponseID";
+                AddParameter.SqlDbType = SqlDbType.Int;
+                AddParameter.Direction = ParameterDirection.Input;
+                AddParameter.Value = SRI;
+
+                GetCommand.Parameters.Add(AddParameter);
+
                 using (SqlDataReader reader = GetCommand.ExecuteReader())
                 {
                     while(reader.Read())
                     {
                         if(reader.HasRows)
                         {
-                            choice = new Choice();
-
                             choice.ChoiceID = Convert.ToInt32(reader["ChoiceID"].ToString());
-                            choice.Description = reader["Choice Text"].ToString();
-
-                            choices.Add(choice);
+                            choice.Description = reader["Choice Text"].ToString();                         
                         }
                     }
                 }
@@ -501,6 +505,7 @@ public class Surveys
                 meretas.Close();
             }
         }
-        return choices;
+
+        return choice;
     }
 }

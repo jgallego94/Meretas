@@ -9,6 +9,7 @@ using System.Web;
 public class CreditCard
 {
     private string cardNameValue;
+    private byte[] cardImageValue;
     private string cardTypeValue;
     private string cardEmploymentStatusValue;
     private string cardFeaturesValue;
@@ -19,6 +20,12 @@ public class CreditCard
     {
         get { return cardNameValue; }
         set { cardNameValue = value; }
+    }
+
+    public byte[] CardImage
+    {
+        get { return cardImageValue; }
+        set { cardImageValue = value; }
     }
 
     public string CardType

@@ -53,6 +53,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                     int tempSurveyID = Convert.ToInt32(Application["SurveyID"]);
                     int tempQuestionID = activeSurvey.Questions[q].QuestionID;
                     int tempChoiceID = Convert.ToInt32(Request.Form[tempQuestionID]);
+
                     //Returns ChoiceID and ChoiceText
                     Choicelist.Add(MCH.GetUserResponse(tempSurveyID, tempQuestionID, tempChoiceID, SRI));
                 }

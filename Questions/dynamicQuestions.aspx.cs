@@ -82,7 +82,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
             for (int j = 1; j < activeSurvey.Questions[0].Choices.Count(); j++)
             {
-                carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[0].Choices[j].Description + " name=" + activeSurvey.Questions[0].QuestionID + ">");
+                carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[0].Choices[j].Description + " name=" + activeSurvey.Questions[0].QuestionID + " value = " + activeSurvey.Questions[0].Choices[j].ChoiceID + " > ");
                 carouselBuilder.Append("<label for=" + activeSurvey.Questions[0].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[0].Choices[j].ChoiceID + "> " + activeSurvey.Questions[0].Choices[j].Description + "</label><br><br><br>");
 
             }

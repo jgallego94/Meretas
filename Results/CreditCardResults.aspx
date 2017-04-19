@@ -68,7 +68,7 @@
                      
                  </div>
 
-                 <div class="col-sm-6" id="cardTwo" style="border-right: solid 1px; border-color:#ff944d; font-size:15px; height: 45vh;">
+                 <div class="col-sm-6" id="cardTwo" style=" font-size:15px; height: 45vh;">
                      <h3><span runat="server" id="cardName2"></span></h3>
 
                      <img style="margin:20px; height: 19vh; width: 33vh;" src="https://www.rbcroyalbank.com/services/cards/_assets-custom/images/avion/card-avion.png" />

@@ -51,7 +51,7 @@
             <br>
             
             <div class="col-sm-12" id="MainContent">
-                       <form runat="server">
+            <form runat="server">
             <div class="Container" id="CenterContent">
                 
                 <div class="col-sm-12" id="CenterPane">
@@ -66,10 +66,9 @@
                     <!--Page information-->
                 </p>
                 <br><br><br>
-                  
                   <!--  <a href="Questions/QuestionsV1.aspx" role="button" class="btn btn-lg" id="startButton">Get Started</a> -->
                      <asp:Button CssClass="btn btn-sm" id="startButton" OnClick="startButton_Click" Text="Get Started" runat="server" /> 
-                           
+   
              
                 </div>
 

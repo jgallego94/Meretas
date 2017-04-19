@@ -62,6 +62,20 @@ public class MeretasCodeHandler
        return Confirmation;
    }
 
+    public bool newCreditCard(string cardName, string reLink, int cardID, string dateAdded, string timeAdded)
+    {
+        bool Confirmation = false;
+        CreditCard newCard = new CreditCard();
+        newCard.CardName = cardName;
+        newCard.CardLink = reLink;
+        newCard.CreditCardID = cardID;
+
+        CreditCards CreditCardManager = new CreditCards();
+
+        Confirmation = CreditCardManager.AddCreditCard(newCard, dateAdded, timeAdded);
+        return Confirmation;
+    }
+
    public int ProcessSurvey(int VisitorID, int SurveyID, string DateSubmitted, string TimeSubmitted)
    {
        int SurveyResponseID;
@@ -95,4 +109,6 @@ public class MeretasCodeHandler
         CreditCards CreditCardManager = new CreditCards();
         return CreditCardManager.RecommendCreditCards(type, employmentStatus, features, balance, discharged);    
     }
+
+    
 }

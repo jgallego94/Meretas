@@ -12,6 +12,18 @@
     
 }
 
+.btn{
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  background: #ff944d;
+  padding: 15px 40px 15px 40px;
+  text-decoration: none;
+}
+
 .a{
     color:white;
 }
@@ -101,6 +113,8 @@ h2{
   text-decoration: none;
 }
 
+
+
 #startButton:hover {
   background:#ff751a;
   text-decoration: none;
@@ -124,6 +138,8 @@ h2{
   text-decoration: none;
   color: white;
 }
+
+
 
 #footer{
     background-color: black;
@@ -340,3 +356,29 @@ input[type=radio]:checked + label:before {
     background-repeat: no-repeat;
     height: 100vh;
 }
+
+#addButton{
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  background: #ff944d;
+  padding: 15px 40px 15px 40px;
+  text-decoration: none;
+}
+
+#addButton:hover{
+  background:#ff751a;
+  text-decoration: none;
+  color: white;
+}
+
+#delButton:hover{
+  background:#ff751a;
+  text-decoration: none;
+  color: white;
+}
+
+

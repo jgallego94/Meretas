@@ -70,7 +70,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
             for (int j = 1; j < activeSurvey.Questions[0].Choices.Count(); j++)
             {
                 carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[0].Choices[j].Description + " name=" + activeSurvey.Questions[0].QuestionID + ">");
-                carouselBuilder.Append("<label for=" + activeSurvey.Questions[0].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[0].Choices[j].Description + "> " + activeSurvey.Questions[0].Choices[j].Description + "</label><br><br><br>");
+                carouselBuilder.Append("<label for=" + activeSurvey.Questions[0].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[0].Choices[j].ChoiceID + "> " + activeSurvey.Questions[0].Choices[j].Description + "</label><br><br><br>");
 
             }
 
@@ -101,7 +101,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                 for (int j = 1; j < activeSurvey.Questions[i].Choices.Count(); j++)
                 {
                     carouselBuilder.Append("<input type=\"radio\" id=" + activeSurvey.Questions[i].Choices[j].Description + " name=" + activeSurvey.Questions[i].QuestionID + " value=" + activeSurvey.Questions[i].Choices[j].ChoiceID + "> ");
-                    carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[i].Choices[j].Description + "> " + activeSurvey.Questions[i].Choices[j].Description + "</label><br><br><br>");
+                    carouselBuilder.Append("<label for=" + activeSurvey.Questions[i].Choices[j].Description + " name=\"q\" " + activeSurvey.Questions[i].Choices[j].ChoiceID + "> " + activeSurvey.Questions[i].Choices[j].Description + "</label><br><br><br>");
 
                 }
 
@@ -109,7 +109,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
                 carouselBuilder.Append("</div>");
 
-                if(activeSurvey.Questions[i].Equals(activeSurvey.Questions.Last()))
+                if (activeSurvey.Questions[i].Equals(activeSurvey.Questions.Last()))
                 {
                     carouselBuilder.Append("<input type=\"submit\" id=\"nextButton\" class=\"btn btn-lg\" value=\"Get Results\">");
                 }
@@ -119,8 +119,9 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                   
                 }            
                 carouselBuilder.Append("</div>");
-            
-                }
+                carouselBuilder.Append("</div>");
+
+            }
 
             string carouselString = carouselBuilder.ToString();
             dynamicSurvey.InnerHtml = carouselString;

@@ -22,4 +22,22 @@ public partial class Users_Admin : System.Web.UI.Page
 
         Response.Redirect("../Default.aspx");
     }
+
+    protected void addButton_Click(object sender, EventArgs e)
+    {
+        DateTime date = DateTime.Now;
+        string day = date.Date.ToString();
+        string time = date.TimeOfDay.ToString();
+
+        MeretasCodeHandler MCH = new MeretasCodeHandler();
+        MCH.newCreditCard(cardName.Text, relLink.Text, Convert.ToInt32(addCardID.Text), day, time);
+
+    }
+
+    protected void delButton_Click(object sender, EventArgs e)
+    {
+        MeretasCodeHandler MCH = new MeretasCodeHandler();
+
+
+    }
 }

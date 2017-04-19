@@ -15,6 +15,11 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
+    protected void startButton_Click(object sender, EventArgs e)
+    {
+        Application["SurveyID"] = 1;
+        Response.Redirect("Questions/dynamicQuestions.aspx");
+    }
 
     protected void Login_Click(object sender, EventArgs e)
     {
@@ -26,9 +31,9 @@ public partial class _Default : System.Web.UI.Page
         Response.Cookies["MemberID"].Value = activeMember.memberID;
         Response.Cookies["isAdmin"].Value = activeMember.isAdmin.ToString();
 
-        if(activeMember.memberID != null)
+        if (activeMember.memberID != null)
         {
-            if(activeMember.isAdmin == 1)
+            if (activeMember.isAdmin == 1)
             {
                 Response.Redirect("Users/Admin.aspx");
             }
@@ -39,9 +44,5 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    protected void startButton_Click(object sender, EventArgs e)
-    {
-        Application["SurveyID"] = 1;
-        Response.Redirect("Questions/dynamicQuestions.aspx");
-    }
+
 }

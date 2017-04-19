@@ -277,7 +277,7 @@ public class Surveys
         
     }
     
-    public int SubmitSurvey(int surveyID, int memberID, string dateSubmitted, string timeSubmitted)
+    public int SubmitSurvey(int surveyID, int memberID, string dateSubmitted, TimeSpan timeSubmitted)
     {
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
@@ -324,7 +324,7 @@ public class Surveys
                 Parameter.ParameterName = "@TimeSubmitted";
                 Parameter.SqlDbType = SqlDbType.Time;
                 Parameter.Direction = ParameterDirection.Input;
-                Parameter.Value = dateSubmitted;
+                Parameter.Value = timeSubmitted;
 
                 SubmitCommand.Parameters.Add(Parameter);
 

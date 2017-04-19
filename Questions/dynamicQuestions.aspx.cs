@@ -30,7 +30,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
             if (IsPostBack)
             {
-                string time = "12:12 AM";
+                TimeSpan time = DateTime.Now.TimeOfDay;
                 int SRI = MCH.ProcessSurvey(1, Convert.ToInt32(Application["SurveyID"]), "01/01/2017", time);
                 Choice activeChoice = new Choice();
                 List<Choice> Choicelist = new List<Choice>();

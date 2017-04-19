@@ -71,7 +71,7 @@ public class MeretasCodeHandler
         return Confirmation;
     }
 
-   public int ProcessSurvey(int VisitorID, int SurveyID, string DateSubmitted, string TimeSubmitted)
+   public int ProcessSurvey(int VisitorID, int SurveyID, string DateSubmitted, TimeSpan TimeSubmitted)
    {
        int SurveyResponseID;
        Surveys SurveyManager = new Surveys();

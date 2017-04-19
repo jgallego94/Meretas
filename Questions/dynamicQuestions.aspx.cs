@@ -48,10 +48,13 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
 
                     int choiceID = Convert.ToInt32(UserResponses[q].ToString());
 
-                    MCH.RecordUserResponse(SRI, surveyID, questionID, choiceID); 
+                    MCH.RecordUserResponse(SRI, surveyID, questionID, choiceID);
 
+                    int tempSurveyID = Convert.ToInt32(Application["SurveyID"]);
+                    int tempQuestionID = activeSurvey.Questions[q].QuestionID;
+                    int tempChoiceID = Convert.ToInt32(Request.Form[tempQuestionID]);
                     //Returns ChoiceID and ChoiceText
-                    Choicelist.Add(MCH.GetUserResponse(Convert.ToInt32(Application["SurveyID"]), Convert.ToInt32(Request.Form[activeSurvey.Questions[q].QuestionID]), Convert.ToInt32(UserResponses[q]), SRI));
+                    Choicelist.Add(MCH.GetUserResponse(tempSurveyID, tempQuestionID, tempChoiceID, SRI));
                 }
 
 

@@ -28,7 +28,11 @@ public partial class Results_CreditCardResults : System.Web.UI.Page
 
         else
         {
-            cardName1.InnerText = "There are no cards for you.";
+            cardName1.InnerText = "No cards found.";
+            cardImage1.Visible = false;
+            cardImage2.Visible = false;
+            cardtable1.Visible = false;
+            cardTable2.Visible = false;
         }
    
     }

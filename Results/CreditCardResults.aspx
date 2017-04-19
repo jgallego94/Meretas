@@ -40,8 +40,9 @@
                  <hr class="style-eight" />
                  <div class="col-sm-6" id="cardOne" style="border-right: solid 1px; border-color:#ff944d; font-size:15px; height: 45vh;">
                         <h3><span runat="server" id="cardName1"></span></h3>
-                     <img style="margin:20px;" src="https://www.tdcanadatrust.com/images/ccr2/ccr2-classic-travel-banner-card.jpg" />
-                      <asp:Table runat="server" CssClass="table table-striped table-condensed">
+                     <!--<img style="margin:20px;" src="https://www.tdcanadatrust.com/images/ccr2/ccr2-classic-travel-banner-card.jpg" /> -->
+                     <asp:Image ID="cardImage1" style="margin:20px;" ImageUrl="https://www.tdcanadatrust.com/images/ccr2/ccr2-classic-travel-banner-card.jpg" runat="server" />
+                      <asp:Table runat="server" CssClass="table table-striped table-condensed" ID="cardtable1">
                         
                          <asp:TableRow>
                              <asp:TableCell ColumnSpan="2">
@@ -71,8 +72,9 @@
                  <div class="col-sm-6" id="cardTwo" style=" font-size:15px; height: 45vh;">
                      <h3><span runat="server" id="cardName2"></span></h3>
 
-                     <img style="margin:20px; height: 19vh; width: 33vh;" src="https://www.rbcroyalbank.com/services/cards/_assets-custom/images/avion/card-avion.png" />
-                      <asp:Table runat="server" CssClass="table table-striped table-condensed">
+                    <!-- <img id="cardImage1" style="margin:20px; height: 19vh; width: 33vh;" src="https://www.rbcroyalbank.com/services/cards/_assets-custom/images/avion/card-avion.png" /> -->
+                     <asp:Image ID="cardImage2"  style="margin:20px; height: 19vh; width: 33vh;" ImageUrl="https://www.rbcroyalbank.com/services/cards/_assets-custom/images/avion/card-avion.png" runat="server" />
+                      <asp:Table runat="server" CssClass="table table-striped table-condensed" ID="cardTable2">
                         
                          <asp:TableRow>
                              <asp:TableCell ColumnSpan="2">

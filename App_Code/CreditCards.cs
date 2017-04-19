@@ -163,7 +163,7 @@ public class CreditCards
         }
         return success;
     }
-    public List<CreditCard> RecommendCreditCards(string type, string employmentStatus, string features, string balance, string discharged)
+    public List<CreditCard> RecommendCreditCards(string type, string employmentStatus, string features, string balance)
     {
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();

@@ -57,12 +57,14 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                     Choicelist.Add(MCH.GetUserResponse(tempSurveyID, tempQuestionID, tempChoiceID, SRI));
                 }
 
+                List<CreditCard> cardList = new List<CreditCard>();
 
-
-                for (int i = 0; i < CardAttributes.Count(); i++)
+                foreach (Choice uh in Choicelist)
                 {
-
+                   cardList = MCH.RecommendCard(Choicelist[0].Description, Choicelist[1].Description, Choicelist[2].Description, Choicelist[3].Description);
                 }
+
+                Application["cardList"] = cardList;
             
             }
 

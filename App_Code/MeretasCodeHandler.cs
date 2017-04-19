@@ -104,10 +104,10 @@ public class MeretasCodeHandler
         return SurveyManager.GetUserResponse(surveyID, questionID, choiceID, SRI);
     }
 
-    public List<CreditCard> RecommendCard(string type, string employmentStatus, string features, string balance, string discharged)
+    public List<CreditCard> RecommendCard(string type, string employmentStatus, string features, string balance)
     {
         CreditCards CreditCardManager = new CreditCards();
-        return CreditCardManager.RecommendCreditCards(type, employmentStatus, features, balance, discharged);    
+        return CreditCardManager.RecommendCreditCards(type, employmentStatus, features, balance);    
     }
 
     

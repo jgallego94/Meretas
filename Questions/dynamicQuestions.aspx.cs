@@ -37,27 +37,23 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                 List<string> UserResponses = new List<string>();
                 List<CreditCard> CreditCards = new List<CreditCard>();
                 List<string> CardAttributes = new List<string>();
-                int choiceID;
 
                 //populate user choices list
                 for (int q = 0; q < activeSurvey.Questions.Count(); q++)
                 {
-                    int surveyID = Convert.ToInt32(Application["SurveyID"].ToString());
+                    int surveyID = Convert.ToInt32(Application["SurveyID"]);
                     int questionID = activeSurvey.Questions[q].QuestionID;
 
-                    UserResponses.Add(Request.Form[activeSurvey.Questions[q].QuestionID].ToString());
-                    
+                    UserResponses.Add(Page.Request.Form[questionID]);
+
+                    int choiceID;
                     Int32.TryParse(UserResponses[q].ToString(), out choiceID);
 
-                    //adds into table
+                    //adds into QuestionResponse table
                     MCH.RecordUserResponse(SRI, surveyID, questionID, choiceID);
 
-                    int tempSurveyID = Convert.ToInt32(Application["SurveyID"]);
-                    int tempQuestionID = activeSurvey.Questions[q].QuestionID;
-                    int tempChoiceID = Convert.ToInt32(Request.Form[tempQuestionID]);
-
                     //Returns ChoiceID and ChoiceText
-                    Choicelist.Add(MCH.GetUserResponse(tempSurveyID, tempQuestionID, tempChoiceID, SRI));
+                    Choicelist.Add(MCH.GetUserResponse(surveyID, questionID, choiceID, SRI));
                 }
 
                 List<CreditCard> cardList = new List<CreditCard>();

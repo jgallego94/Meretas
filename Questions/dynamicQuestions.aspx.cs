@@ -24,6 +24,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
             StringWriter sw = new StringWriter();          
             Survey activeSurvey = new Survey();
             StringBuilder carouselBuilder = new StringBuilder();
+            Choice choice;
 
             //survey ID is hardcoded to 1 for now
             activeSurvey = MCH.GetSurvey(Convert.ToInt32(Application["SurveyID"]));
@@ -47,7 +48,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                     UserResponses.Add(Page.Request.Form[questionID]);
 
                     int choiceID;
-                    Int32.TryParse(UserResponses[q].ToString(), out choiceID);
+                    Int32.TryParse(UserResponses[q], out choiceID);
 
                     //adds into QuestionResponse table
                     MCH.RecordUserResponse(SRI, surveyID, questionID, choiceID);

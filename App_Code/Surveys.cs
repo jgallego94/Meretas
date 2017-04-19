@@ -324,7 +324,7 @@ public class Surveys
                 Parameter.ParameterName = "@TimeSubmitted";
                 Parameter.SqlDbType = SqlDbType.Time;
                 Parameter.Direction = ParameterDirection.Input;
-                Parameter.Value = "12:25";
+                Parameter.Value = dateSubmitted;
 
                 SubmitCommand.Parameters.Add(Parameter);
 

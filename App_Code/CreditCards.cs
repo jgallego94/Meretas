@@ -9,17 +9,23 @@ using System.Data.SqlClient;
 
 public class CreditCards
 {
-    public bool AddCreditCard(CreditCard creditCard, string dateAdded, string timeAdded)
+    public SqlConnection Meretas()
     {
         ConnectionStringSettings WebSettings = ConfigurationManager.ConnectionStrings["Meretas"];
         SqlConnection meretas = new SqlConnection();
         meretas.ConnectionString = WebSettings.ConnectionString;
 
+        return meretas;
+    }
+    public bool AddCreditCard(CreditCard creditCard)
+    {
+        
+
         CreditCard card = new CreditCard();
         int rowsAffected = 0;
         bool success = false;
 
-        using (meretas)
+        using (SqlConnection meretas = Meretas())
         {
             try
             {
@@ -38,13 +44,13 @@ public class CreditCards
 
                 AddCommand.Parameters.Add(AddParameter);
 
-                AddParameter = new SqlParameter();
-                AddParameter.ParameterName = "@CardImage";
-                AddParameter.SqlDbType = SqlDbType.VarBinary;
-                AddParameter.Direction = ParameterDirection.Input;
-                AddParameter.Value = creditCard.CardImage;
+                //AddParameter = new SqlParameter();
+                //AddParameter.ParameterName = "@CardImage";
+                //AddParameter.SqlDbType = SqlDbType.VarBinary;
+                //AddParameter.Direction = ParameterDirection.Input;
+                //AddParameter.Value = creditCard.CardImage;
 
-                AddCommand.Parameters.Add(AddParameter);
+                //AddCommand.Parameters.Add(AddParameter);
 
                 AddParameter = new SqlParameter();
                 AddParameter.ParameterName = "@RedirectLink";
@@ -61,10 +67,19 @@ public class CreditCards
                 AddParameter.Value = creditCard.DateAdded;
 
                 AddCommand.Parameters.Add(AddParameter);
+
+                AddParameter = new SqlParameter();
                 AddParameter.ParameterName = "@TimeAdded";
                 AddParameter.SqlDbType = SqlDbType.Time;
                 AddParameter.Direction = ParameterDirection.Input;
                 AddParameter.Value = creditCard.TimeAdded;
+
+                AddCommand.Parameters.Add(AddParameter);
+
+                AddParameter = new SqlParameter();
+                AddParameter.ParameterName = "@CreditCardID";
+                AddParameter.SqlDbType = SqlDbType.Int;
+                AddParameter.Direction = ParameterDirection.Output;
 
                 AddCommand.Parameters.Add(AddParameter);
 
@@ -91,7 +106,7 @@ public class CreditCards
 
         if (card != null)
         {
-            using (meretas)
+            using (SqlConnection meretas = Meretas())
             {
                 try
                 {
@@ -141,8 +156,6 @@ public class CreditCards
                     AddParameter.Value = creditCard.BalanceLength;
 
                     AddCommand.Parameters.Add(AddParameter);
-
-                   
 
                     rowsAffected = AddCommand.ExecuteNonQuery();
 
@@ -226,6 +239,7 @@ public class CreditCards
                             creditCard = new CreditCard();
 
                             creditCard.CardName = reader["CreditCardName"].ToString();
+                            creditCard.CardLink = reader["RedirectLink"].ToString();
                             creditCard.CardType = reader["Type"].ToString();
                             creditCard.EmploymentStatus = reader["EmploymentStatus"].ToString();
                             creditCard.Features = reader["Features"].ToString();

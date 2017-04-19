@@ -62,17 +62,12 @@ public class MeretasCodeHandler
        return Confirmation;
    }
 
-    public bool newCreditCard(string cardName, string reLink, int cardID, string dateAdded, string timeAdded)
+    public bool newCreditCard(CreditCard newCard)
     {
         bool Confirmation = false;
-        CreditCard newCard = new CreditCard();
-        newCard.CardName = cardName;
-        newCard.CardLink = reLink;
-        newCard.CreditCardID = cardID;
-
         CreditCards CreditCardManager = new CreditCards();
 
-        Confirmation = CreditCardManager.AddCreditCard(newCard, dateAdded, timeAdded);
+        Confirmation = CreditCardManager.AddCreditCard(newCard);
         return Confirmation;
     }
 

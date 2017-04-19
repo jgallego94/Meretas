@@ -65,6 +65,7 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                 }
 
                 Application["cardList"] = cardList;
+                Response.Redirect("../Results/CreditCardResults.aspx");
             
             }
 

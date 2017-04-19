@@ -50,11 +50,11 @@
         </nav>
              <h1 style="color:white;">Welcome admin  <asp:Label ID="WelcomeLabel" runat="server"></asp:Label></h1>
              <br /><br />
-             <div class="col-sm-4">
+             <div class="col-sm-7">
                  <div class="col-sm-12" id="addCreditCard"  style="border: solid 1px; border-color: #ff944d; margin: 10px;">
 
                  <h2 style="color:#ffffff; text-shadow: 0 0 2px #000;">Add Credit Card</h2>
-                 
+                 <div class="col-sm-4">
                      <asp:Table runat="server">
                          <asp:TableRow>
                              <asp:TableCell>
@@ -81,6 +81,7 @@
                              </asp:TableCell>
                          </asp:TableRow>
                      </asp:Table>
+                     </div>
                   
                  <br />
                      <asp:Button id="addButton" CssClass="btn" Text="Add" OnClick="addButton_Click" runat="server" style="margin-bottom:10px;"/> 

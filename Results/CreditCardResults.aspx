@@ -38,7 +38,64 @@
              <div class="col-sm-8" id="ResultPane">
                  <br />
                  <hr class="style-eight" />
-                 
+                 <div class="col-sm-6" id="cardOne" style="border-right: solid 1px; border-color:#ff944d; font-size:15px; height: 45vh;">
+                        <h3><span runat="server" id="cardName1"></span></h3>
+                     <img style="margin:20px;" src="https://www.tdcanadatrust.com/images/ccr2/ccr2-classic-travel-banner-card.jpg" />
+                      <asp:Table runat="server" CssClass="table table-striped table-condensed">
+                        
+                         <asp:TableRow>
+                             <asp:TableCell ColumnSpan="2">
+                                 <asp:HyperLink ID="cardLink1" runat="server">Apply Now</asp:HyperLink>
+                             </asp:TableCell>
+                         </asp:TableRow>
+                         <asp:TableRow>
+                             <asp:TableCell>
+                                 <h4>Card Type: </h4>
+                             </asp:TableCell>
+                             <asp:TableCell>
+                                 <span runat="server" id="cardType1"></span>
+                             </asp:TableCell>
+                         </asp:TableRow>
+                          <asp:TableRow>
+                              <asp:TableCell>
+                                  <h4>Features: </h4>
+                              </asp:TableCell>
+                              <asp:TableCell>
+                                  <span runat="server" id="cardFeatures1"></span>
+                              </asp:TableCell>
+                          </asp:TableRow>
+                     </asp:Table>
+                     
+                 </div>
+
+                 <div class="col-sm-6" id="cardTwo" style="border-right: solid 1px; border-color:#ff944d; font-size:15px; height: 45vh;">
+                     <h3><span runat="server" id="cardName2"></span></h3>
+
+                     <img style="margin:20px; height: 19vh; width: 33vh;" src="https://www.rbcroyalbank.com/services/cards/_assets-custom/images/avion/card-avion.png" />
+                      <asp:Table runat="server" CssClass="table table-striped table-condensed">
+                        
+                         <asp:TableRow>
+                             <asp:TableCell ColumnSpan="2">
+                                 <asp:HyperLink ID="cardLink2" runat="server">Apply Now</asp:HyperLink>
+                             </asp:TableCell>
+                         </asp:TableRow>
+                         <asp:TableRow>
+                             <asp:TableCell>
+                                 <h4>Card Type: </h4>
+                             </asp:TableCell>
+                             <asp:TableCell>
+                                 <span runat="server" id="cardType2"></span>
+                             </asp:TableCell>
+                         </asp:TableRow>
+                          <asp:TableRow>
+                              <asp:TableCell>
+                                  <h4>Features: </h4>
+                              </asp:TableCell>
+                              <asp:TableCell>
+                                  <span runat="server" id="cardFeatures2"></span>
+                              </asp:TableCell>
+                          </asp:TableRow>
+                     </asp:Table>
                 
              </div>
              <div class="col-sm-2">

@@ -33,6 +33,10 @@ public partial class Users_Admin : System.Web.UI.Page
         newCard.TimeAdded = date.TimeOfDay.ToString();
         newCard.CardName = cardName.Text;
         newCard.CardLink = relLink.Text;
+        newCard.CardType = cardType.SelectedValue;
+        newCard.EmploymentStatus = cardEmploy.SelectedValue;
+        newCard.Features = cardFeatures.SelectedValue;
+        newCard.BalanceLength = cardBalance.SelectedValue;
 
         MeretasCodeHandler MCH = new MeretasCodeHandler();
         MCH.newCreditCard(newCard);

@@ -16,7 +16,6 @@ public class CreditCard
     private string cardEmploymentStatusValue;
     private string cardFeaturesValue;
     private string cardBalanceLengthValue;
-    private string cardDischargedValue;
     private string cardDateAddedValue;
     private string cardTimeAddedValue;
     private bool cardIsRemovedValue;
@@ -62,11 +61,6 @@ public class CreditCard
     {
         get { return cardBalanceLengthValue; }
         set { cardBalanceLengthValue = value; }
-    }
-    public string Discharged
-    {
-        get { return cardDischargedValue; }
-        set { cardDischargedValue = value; }
     }
     public string DateAdded
     {

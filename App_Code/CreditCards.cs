@@ -142,13 +142,7 @@ public class CreditCards
 
                     AddCommand.Parameters.Add(AddParameter);
 
-                    AddParameter = new SqlParameter();
-                    AddParameter.ParameterName = "@Discharged";
-                    AddParameter.SqlDbType = SqlDbType.NVarChar;
-                    AddParameter.Direction = ParameterDirection.Input;
-                    AddParameter.Value = creditCard.Discharged;
-
-                    AddCommand.Parameters.Add(AddParameter);
+                   
 
                     rowsAffected = AddCommand.ExecuteNonQuery();
 
@@ -221,13 +215,7 @@ public class CreditCards
 
                 GetCommand.Parameters.Add(AddParameter);
 
-                AddParameter = new SqlParameter();
-                AddParameter.ParameterName = "@Discharged";
-                AddParameter.SqlDbType = SqlDbType.NVarChar;
-                AddParameter.Direction = ParameterDirection.Input;
-                AddParameter.Value = discharged;
-
-                GetCommand.Parameters.Add(AddParameter);
+          
 
                 using (SqlDataReader reader = GetCommand.ExecuteReader())
                 {
@@ -242,7 +230,7 @@ public class CreditCards
                             creditCard.EmploymentStatus = reader["EmploymentStatus"].ToString();
                             creditCard.Features = reader["Features"].ToString();
                             creditCard.BalanceLength = reader["Balance"].ToString();
-                            creditCard.Discharged = reader["Discharged"].ToString();
+                       
 
                             creditCards.Add(creditCard);
                         }

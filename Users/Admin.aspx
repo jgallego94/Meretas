@@ -52,7 +52,7 @@
              <br /><br />
              <div class="col-sm-5">
                  <div class="col-sm-12" id="addCreditCard"  style="border: solid 1px; border-color: white; margin: 10px;">
-                 <h2 style="color:#ff944d; text-shadow: 0 0 2px #fff;">Add Credit Card</h2>
+                 <h2 style="color:#ff944d; text-shadow: 0 0 2px #000;">Add Credit Card</h2>
                  
                      <div class="form-group" style="color:white;">
                        <span style="color:#ff944d; padding-right:5px;" class="glyphicon glyphicon-credit-card"> </span> <asp:TextBox CssClass="form-control" ID="cardName" runat="server" placeholder="Credit Card Name"></asp:TextBox>
@@ -70,7 +70,7 @@
                  </div>
                  
                  <div class="col-sm-12" id="deleteCreditCard"  style="border: solid 1px; border-color: white; margin:10px;">
-                     <h2 style="color:#ff944d; text-shadow: 0 0 2px #fff;">Delete Credit Card</h2>
+                     <h2 style="color:#ff944d; text-shadow: 0 0 2px #000;">Delete Credit Card</h2>
                      <div class="form-group" style="color:white;">
                           <span style="color:#ff944d; padding-right:5px;" class="glyphicon glyphicon-list-alt"></span><asp:TextBox CssClass="form-control" ID="delCardID" runat="server" placeholder="Credit Card ID"></asp:TextBox>
                      </div>

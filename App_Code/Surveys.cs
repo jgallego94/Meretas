@@ -490,7 +490,7 @@ public class Surveys
                         if(reader.HasRows)
                         {
                             choice.ChoiceID = Convert.ToInt32(reader["ChoiceID"].ToString());
-                            choice.Description = reader["Choice Text"].ToString();                         
+                            choice.Description = reader["ChoiceText"].ToString();                         
                         }
                     }
                 }

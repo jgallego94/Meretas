@@ -41,12 +41,20 @@ public partial class Questions_dynamicTest : System.Web.UI.Page
                 //populate user choices list
                 for (int q = 0; q < activeSurvey.Questions.Count(); q++)
                 {
-                    UserResponses.Add(Page.Request.Form[activeSurvey.Questions[q].QuestionID].ToString());
-                    MCH.RecordUserResponse(SRI, Convert.ToInt32(Application["SurveyID"]), activeSurvey.Questions[q].QuestionID, Convert.ToInt32(UserResponses[q])); 
-                    Choicelist.Add(MCH.GetUserResponse(Convert.ToInt32(Application["SurveyID"]), Convert.ToInt32(Request.Form[activeSurvey.Questions[q].QuestionID]), Convert.ToInt32(UserResponses[q]), SRI));
+                    int surveyID = Convert.ToInt32(Application["SurveyID"].ToString());
+                    int questionID = activeSurvey.Questions[q].QuestionID;
 
-                    CardAttributes.Add(activeSurvey.Questions[q].Choices[Convert.ToInt32(UserResponses[q])].Description);
+                    UserResponses.Add(Page.Request.Form[activeSurvey.Questions[q].QuestionID].ToString());
+
+                    int choiceID = Convert.ToInt32(UserResponses[q].ToString());
+
+                    MCH.RecordUserResponse(SRI, surveyID, questionID, choiceID); 
+
+                    //Returns ChoiceID and ChoiceText
+                    Choicelist.Add(MCH.GetUserResponse(Convert.ToInt32(Application["SurveyID"]), Convert.ToInt32(Request.Form[activeSurvey.Questions[q].QuestionID]), Convert.ToInt32(UserResponses[q]), SRI));
                 }
+
+
 
                 for (int i = 0; i < CardAttributes.Count(); i++)
                 {

@@ -25,12 +25,12 @@ public partial class Users_Admin : System.Web.UI.Page
 
     protected void addButton_Click(object sender, EventArgs e)
     {
-        DateTime date = DateTime.Now;
-        string day = date.Date.ToString();
-        string time = date.TimeOfDay.ToString();
+        //DateTime date = DateTime.Now;
+        //string day = date.Date.ToString();
+        //string time = date.TimeOfDay.ToString();
 
         MeretasCodeHandler MCH = new MeretasCodeHandler();
-        MCH.newCreditCard(cardName.Text, relLink.Text, Convert.ToInt32(addCardID.Text), day, time);
+        //MCH.newCreditCard(cardName.Text, relLink.Text, Convert.ToInt32(addCardID.Text), day, time);
 
     }
 
